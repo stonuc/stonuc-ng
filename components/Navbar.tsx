@@ -102,7 +102,7 @@ const Navbar = () => {
         </div>
         {/* Sidebar Menu for Mobile */}
         <div
-          className={`fixed top-0 right-0 h-full w-64 bg-white transform transition-transform duration-300 ease-in-out ${
+          className={`fixed top-0 right-0 w-64 bg-white transform transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
           style={{ zIndex: 1000 }}
@@ -171,7 +171,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <div className="hidden md:inline-flex items-center space-x-4  text-sm md:text-base">
+      <div className="hidden md:inline-flex mt-32 items-center space-x-4  text-sm md:text-base">
         <a
           href="mailto:contact@atoovis.com"
           className="flex items-center text-sky-50 w-full gap-3"

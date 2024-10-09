@@ -43,7 +43,7 @@ const ServicesSection = () => {
           <img
             src="/dg0.png"
             alt="Digital Product Implementation"
-            className="mx-auto mb-2 h-16 w-16 md:h-24 md:w-24"
+            className="mx-auto mb-2 h-16 w-16 md:h-24 md:w-24 object-cover"
           />
           <h3 className="text-lg font-semibold">Digital Product Implementation</h3>
         </div>
@@ -51,7 +51,7 @@ const ServicesSection = () => {
           <img
             src="/dg1.png"
             alt="Customer Experience Engineering"
-            className="mx-auto mb-2 h-16 w-16 md:h-24 md:w-24"
+            className="mx-auto mb-2 h-16 w-16 md:h-24 md:w-24 object-cover"
           />
           <h3 className="text-lg font-semibold">Customer Experience Engineering</h3>
         </div>
@@ -59,7 +59,7 @@ const ServicesSection = () => {
           <img
             src="/dg2.png"
             alt="Technology & Engineering Outsourcing"
-            className="mx-auto mb-2 h-16 w-16 md:h-24 md:w-24"
+            className="mx-auto mb-2 h-16 w-16 md:h-24 md:w-24 object-cover"
           />
           <h3 className="text-lg font-semibold">Technology & Engineering Outsourcing</h3>
         </div>
