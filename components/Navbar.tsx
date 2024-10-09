@@ -127,7 +127,7 @@ const Navbar = () => {
               />
             </svg>
           </button>
-          <ul className="flex flex-col w-full items-start p-8 space-y-4 text-black uppercase font-semibold md:text-base">
+          <ul className="flex flex-col  items-start p-8 space-y-4 text-black uppercase font-semibold md:text-base">
             <li>
               <Link href="#about">About</Link>
             </li>
@@ -150,7 +150,7 @@ const Navbar = () => {
               <Link href="#pricing">Pricing</Link>
             </li>
           </ul>
-          <div className="flex px-3 flex-col mt-auto text-black gap-3">
+          <div className="flex px-3 flex-col mt-16 text-black gap-3">
             <a
               href="mailto:contact@atoovis.com"
               className="flex items-center text-sky-600 w-full gap-3"
