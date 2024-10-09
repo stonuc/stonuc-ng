@@ -56,7 +56,7 @@ const Navbar = () => {
         </div>
         {/* Hamburger Menu for Mobile */}
         <div className="flex"> 
-        <div className="flex items-center gap-3">
+        <div className="flex md:hidden items-center gap-3">
           <a
               href="mailto:contact@atoovis.com"
               className="flex items-center  w-full gap-3"
@@ -153,7 +153,7 @@ const Navbar = () => {
           <div className="flex px-3 flex-col  text-black gap-3">
             <a
               href="mailto:contact@atoovis.com"
-              className="flex items-center text-sky-600 w-full gap-3"
+              className={`flex items-center text-sky-600 w-full gap-3 `}
             >
               <Mail />
               contact@atoovis.com
@@ -165,7 +165,7 @@ const Navbar = () => {
               <Phone />
               +234 810 409 2397
             </a>
-            <button className=" contact-btn text-black px-4 py-2 rounded">
+            <button className=" contact-btn px-4 py-2 rounded">
               Contact us
             </button>
           </div>
@@ -174,14 +174,14 @@ const Navbar = () => {
       <div className="hidden md:inline-flex mt-auto items-center space-x-4  text-sm md:text-base">
         <a
           href="mailto:contact@atoovis.com"
-          className="flex items-center text-sky-50 w-full gap-3"
+          className={`flex items-center  w-full gap-3 ${isActive ? "text-black" : "text-white"} `}
         >
           <Mail />
           contact@atoovis.com
         </a>
         <a
           href="tel:+2348104092397"
-          className="flex items-start w-full text-sky-50 gap-3"
+          className={`flex items-start  w-full gap-3 ${isActive ? "text-black" : "text-white"} `}
         >
           <Phone />
           +234 810 409 2397
