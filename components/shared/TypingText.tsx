@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Caret from '../Caret';
 
 type TypingTextProps = {
   texts: string[];
@@ -77,8 +78,10 @@ const TypingText: React.FC<TypingTextProps> = ({
             color: isHighlighted ? '#fff' : '#fff', 
           }}
           transition={{ duration: 0.5, ease: 'easeInOut' }}
+          className=''
         >
           {displayedText}
+          {<Caret className='self-center ml-1 min-h-5' />}
         </motion.span>
       )}
     </motion.div>

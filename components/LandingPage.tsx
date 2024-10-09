@@ -22,11 +22,11 @@ export default function LandingPage() {
 
         <main className="flex flex-col items-center justify-center h-full text-white text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Software Consulting and Development</h1>
-          <div className="text-2xl md:text-3xl flex items-center gap-2 md:gap-3">
+          <div className="text-2xl md:text-3xl md:gap-3">
             <span>We </span>
-            <span className="inline-block border min-h-9 min-w-44 px-2">
+            <div className="block border min-h-9 min-w-44 px-2">
               <TypingText texts={["Documents", "Applications", "Platforms"]} />
-            </span>
+            </div>
             <span> project success</span>
           </div>
         </main>

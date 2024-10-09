@@ -2,21 +2,36 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Mail, Phone } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const headerRef = useRef<HTMLHeadElement |  null>(null);
+  const [isActive, setActive] =  useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const headerHeight = headerRef?.current?.clientHeight || 0;
+      setActive(scrollTop > headerHeight);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  },  []);
+
+  
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
 
   return (
-    <header className="flex justify-between items-center p-4 text-white md:px-8 lg:px-16">
+    <header ref={headerRef} className={`
+        flex justify-between items-center p-4 w-full text-white md:px-8 lg:px-16 ${isActive? 'bg-white fixed top-0 z-20 !text-black shadow-2xl' : ''}
+    `}>
       <div className="flex items-center">
         <Image
-          src="/stunuc1.png"
+          src={isActive ? "/stunuc0.png" : "/stunuc1.png"}
           alt="Stonuc Technologies Logo"
           width={180}
           height={40}
@@ -40,6 +55,21 @@ const Navbar = () => {
           </ul>
         </div>
         {/* Hamburger Menu for Mobile */}
+        <div className="flex"> 
+        <div className="flex items-center gap-3">
+          <a
+              href="mailto:contact@atoovis.com"
+              className="flex items-center  w-full gap-3"
+            >
+              <Mail />
+            </a>
+            <a
+              href="tel:+2348104092397"
+              className="flex items-start w-full  gap-3"
+            >
+              <Phone />
+            </a>
+          </div>
         <button
           className="md:hidden p-2"
           onClick={toggleMenu}
@@ -69,6 +99,7 @@ const Navbar = () => {
             )}
           </svg>
         </button>
+        </div>
         {/* Sidebar Menu for Mobile */}
         <div
           className={`fixed top-0 right-0 h-full w-64 bg-white transform transition-transform duration-300 ease-in-out ${
@@ -76,6 +107,7 @@ const Navbar = () => {
           }`}
           style={{ zIndex: 1000 }}
         >
+          
           <button
             className="absolute top-4 right-4 text-black"
             onClick={toggleMenu}
@@ -95,7 +127,7 @@ const Navbar = () => {
               />
             </svg>
           </button>
-          <ul className="flex flex-col items-start p-8 space-y-4 text-black uppercase font-semibold md:text-base">
+          <ul className="flex flex-col w-full items-start p-8 space-y-4 text-black uppercase font-semibold md:text-base">
             <li>
               <Link href="#about">About</Link>
             </li>
@@ -118,9 +150,9 @@ const Navbar = () => {
               <Link href="#pricing">Pricing</Link>
             </li>
           </ul>
-          <div className="flex px-3 flex-col text-black gap-3">
+          <div className="flex px-3 flex-col mt-auto text-black gap-3">
             <a
-              href="mailto:contact@scnsoft.com"
+              href="mailto:contact@atoovis.com"
               className="flex items-center text-sky-600 w-full gap-3"
             >
               <Mail />
@@ -141,7 +173,7 @@ const Navbar = () => {
       </nav>
       <div className="hidden md:inline-flex items-center space-x-4  text-sm md:text-base">
         <a
-          href="mailto:contact@scnsoft.com"
+          href="mailto:contact@atoovis.com"
           className="flex items-center text-sky-50 w-full gap-3"
         >
           <Mail />

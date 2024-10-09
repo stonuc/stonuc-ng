@@ -7,7 +7,7 @@ const WhoWeAreSection = () => {
   const [ref, isInView] = useInView(0.4); // Trigger when 10% is in view
 
   const fadeIn = {
-    hidden: { opacity: 0, x: -20 },
+    hidden: { opacity: 0, x: -30 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
   };
 
