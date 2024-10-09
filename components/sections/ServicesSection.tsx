@@ -25,7 +25,7 @@ const ServicesSection = () => {
         Our Services
       </motion.h2>
       <motion.p
-        className="my-4 text-gray-700 text-base md:text-lg"
+        className="my-4 text-gray-700 text-left md:text-lg"
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
         variants={fadeIn}
@@ -41,7 +41,7 @@ const ServicesSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
         <div className="service-item p-4 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow">
           <img
-            src="/path/to/image1.png"
+            src="/dg0.png"
             alt="Digital Product Implementation"
             className="mx-auto mb-2 h-16 w-16 md:h-24 md:w-24"
           />
@@ -49,7 +49,7 @@ const ServicesSection = () => {
         </div>
         <div className="service-item p-4 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow">
           <img
-            src="/path/to/image2.png"
+            src="/dg1.png"
             alt="Customer Experience Engineering"
             className="mx-auto mb-2 h-16 w-16 md:h-24 md:w-24"
           />
@@ -57,7 +57,7 @@ const ServicesSection = () => {
         </div>
         <div className="service-item p-4 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow">
           <img
-            src="/path/to/image3.png"
+            src="/dg2.png"
             alt="Technology & Engineering Outsourcing"
             className="mx-auto mb-2 h-16 w-16 md:h-24 md:w-24"
           />
