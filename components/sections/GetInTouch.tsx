@@ -85,9 +85,9 @@ export default function Component() {
             </motion.div>
             <motion.div variants={itemVariants}>
               <h3 className="text-xl font-semibold mb-2">Contact Us</h3>
-              <p className="mb-2">hello@ryaktive.com</p>
-              <p className="mb-2">(+971) 55 404 7444</p>
-              <p>(+389) 71 286 273</p>
+              <p className="mb-2">hello@stunuc.com</p>
+              <p className="mb-2">(+234) 810 409 2397</p>
+              <p>(+234) 902 919 1709</p>
             </motion.div>
           </div>
           <motion.form variants={itemVariants} className="space-y-4">

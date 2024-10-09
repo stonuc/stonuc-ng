@@ -58,7 +58,7 @@ const Navbar = () => {
         <div className="flex"> 
         <div className="flex md:hidden items-center gap-3">
           <a
-              href="mailto:contact@atoovis.com"
+              href="mailto:contact@stonuc.com"
               className="flex items-center  w-full gap-3"
             >
               <Mail />
@@ -152,11 +152,11 @@ const Navbar = () => {
           </ul>
           <div className="flex px-3 flex-col  text-black gap-3">
             <a
-              href="mailto:contact@atoovis.com"
+              href="mailto:contact@stonuc.com"
               className={`flex items-center text-sky-600 w-full gap-3 `}
             >
               <Mail />
-              contact@atoovis.com
+              contact@stonuc.com
             </a>
             <a
               href="tel:+2348104092397"
@@ -173,11 +173,11 @@ const Navbar = () => {
       </nav>
       <div className="hidden md:inline-flex mt-auto items-center space-x-4  text-sm md:text-base">
         <a
-          href="mailto:contact@atoovis.com"
+          href="mailto:contact@stonuc.com"
           className={`flex items-center  w-full gap-3 ${isActive ? "text-black" : "text-white"} `}
         >
           <Mail />
-          contact@atoovis.com
+          contact@stonuc.com
         </a>
         <a
           href="tel:+2348104092397"
