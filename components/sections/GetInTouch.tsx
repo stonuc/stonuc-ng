@@ -211,7 +211,7 @@ export default function Component() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className={`mt-4 p-2 rounded ${
+                className={`mt-4 p-2 text-white rounded ${
                   formStatus.success ? "bg-green-600" : "bg-red-600"
                 }`}
               >

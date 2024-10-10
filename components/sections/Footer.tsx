@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import Link from "next/link"
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 const footerLinks = [
   {
@@ -26,13 +26,23 @@ const footerLinks = [
       },
     ],
   },
-]
+  {
+    title: "Career",
+    items: [
+      {
+        title: "Join Our Team",
+        subitems: ["Software Developer", "Product Manager", "UX/UI Designer"],
+      },
+    ],
+    link: "/career",
+  },
+];
 
 export default function Footer() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -42,7 +52,7 @@ export default function Footer() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -54,7 +64,7 @@ export default function Footer() {
         stiffness: 100,
       },
     },
-  }
+  };
 
   return (
     <motion.footer
@@ -75,7 +85,10 @@ export default function Footer() {
                   <ul className="space-y-1">
                     {item.subitems?.map((subitem, subIndex) => (
                       <li key={subIndex}>
-                        <Link href="#" className="text-gray-400 hover:text-white text-sm">
+                        <Link
+                          href={column.link || "#"}
+                          className="text-gray-400 hover:text-white text-sm"
+                        >
                           {subitem}
                         </Link>
                       </li>
@@ -86,17 +99,23 @@ export default function Footer() {
             </motion.div>
           ))}
         </div>
-        <motion.hr variants={itemVariants} className="border-t border-blue-600 my-8" />
+        <motion.hr
+          variants={itemVariants}
+          className="border-t border-blue-600 my-8"
+        />
         <motion.div
           variants={itemVariants}
           className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400"
         >
           <p>© {new Date().getFullYear()} Stonuc • All rights reserved.</p>
-          <Link href="/privacy-policy" className="hover:text-white mt-4 md:mt-0">
+          <Link
+            href="/privacy-policy"
+            className="hover:text-white mt-4 md:mt-0"
+          >
             Privacy Policy
           </Link>
         </motion.div>
       </div>
     </motion.footer>
-  )
+  );
 }
