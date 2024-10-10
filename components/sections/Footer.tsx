@@ -26,18 +26,6 @@ const footerLinks = [
       },
     ],
   },
-  {
-    title: "Our Process",
-    items: [],
-  },
-  {
-    title: "About Us",
-    items: [],
-  },
-  {
-    title: "Contact Us",
-    items: [],
-  },
 ]
 
 export default function Footer() {

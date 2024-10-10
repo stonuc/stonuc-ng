@@ -47,10 +47,7 @@ const Navbar = () => {
               <Link href="#services">Services</Link>
             </li>
             <li>
-              <Link href="#solutions">Solutions</Link>
-            </li>
-            <li>
-              <Link href="#industries">Industries</Link>
+              <Link href="#contact">Contact</Link>
             </li>
           </ul>
         </div>
@@ -135,19 +132,7 @@ const Navbar = () => {
               <Link href="#services">Services</Link>
             </li>
             <li>
-              <Link href="#solutions">Solutions</Link>
-            </li>
-            <li>
-              <Link href="#industries">Industries</Link>
-            </li>
-            <li>
-              <Link href="#technologies">Technologies</Link>
-            </li>
-            <li>
-              <Link href="#portfolio">Portfolio</Link>
-            </li>
-            <li>
-              <Link href="#pricing">Pricing</Link>
+              <Link href="#solutions">Contact</Link>
             </li>
           </ul>
           <div className="flex px-3 flex-col  text-black gap-3">
