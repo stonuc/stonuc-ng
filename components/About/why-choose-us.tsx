@@ -46,7 +46,7 @@ export default function WhyChooseUs() {
           </motion.h2>
           <motion.p variants={itemVariants} className="text-gray-600 text-center max-w-2xl mb-8">
             In today's digitally disrupted world, if you are not agile enough to implement your idea in weeks instead of
-            months, then you are behind. We at Ryaktive can deliver the MVP for your idea in just 7 weeks.
+            months, then you are behind. We at Stonuc can deliver the MVP for your idea in just 7 weeks.
           </motion.p>
           <motion.div variants={itemVariants} className="flex flex-col md:flex-row items-center md:items-start gap-8">
             <div className="w-48 h-48 relative">
