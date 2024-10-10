@@ -25,7 +25,7 @@ export default function LandingPage() {
           <div className="text-2xl md:text-3xl md:gap-3">
             <span>We </span>
             <div className="block border min-h-9 min-w-44 px-2">
-              <TypingText texts={["Documents", "Applications", "Platforms"]} />
+              <TypingText texts={["Safeguard", "Drive", "Streamline", "Streamline"]} />
             </div>
             <span> project success</span>
           </div>
