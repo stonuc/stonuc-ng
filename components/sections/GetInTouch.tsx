@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import { Linkedin, Twitter } from "lucide-react"
+import { Facebook, InstagramIcon, Linkedin, Twitter } from "lucide-react"
 
 export default function Component() {
   const [ref, inView] = useInView({
@@ -75,6 +75,12 @@ export default function Component() {
             <motion.div variants={itemVariants} className="mb-8">
               <h3 className="text-xl font-semibold mb-2">Follow Us</h3>
               <div className="flex space-x-4">
+                <a href="https://www.facebook.com/profile.php?id=61552838184028&mibextid=ZbWKwL" className="text-white hover:text-gray-300">
+                  <Facebook size={24} />
+                </a>
+                <a href="https://www.instagram.com/stonuc_technologies?igsh=ZWJtejNobDg5azdo" className="text-white hover:text-gray-300">
+                  <InstagramIcon size={24} />
+                </a>
                 <a href="#" className="text-white hover:text-gray-300">
                   <Linkedin size={24} />
                 </a>
