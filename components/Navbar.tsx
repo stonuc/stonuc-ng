@@ -29,14 +29,14 @@ const Navbar = () => {
     <header ref={headerRef} className={`
         flex justify-between items-center p-4 w-full text-white md:px-8 lg:px-16 ${isActive? 'bg-white fixed top-0 z-20 !text-black shadow-2xl' : ''}
     `}>
-      <div className="flex items-center">
+      <a href="/" className="flex items-center">
         <Image
           src={isActive ? "/stunuc0.png" : "/stunuc1.png"}
           alt="Stonuc Technologies Logo"
           width={140}
           height={40}
         />
-      </div>
+      </a>
       <nav className="relative">
         <div className="hidden xl:flex space-x-4 text-sm md:text-base">
           <ul className="flex space-x-4">
