@@ -126,7 +126,7 @@ const Navbar = () => {
           </button>
           <ul className="flex flex-col h-full items-start p-8 space-y-4 text-black uppercase font-semibold md:text-base">
             <li>
-              <Link href="#about">About</Link>
+              <Link href="/about-us">About</Link>
             </li>
             <li>
               <Link href="#services">Services</Link>
