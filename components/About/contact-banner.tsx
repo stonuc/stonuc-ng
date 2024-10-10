@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const ContactSection = () => {
@@ -20,6 +21,8 @@ const ContactSection = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const router = useRouter()
 
   return (
     <div className="flex justify-center items-center py-20 bg-gray-100" id="contact-section">
@@ -42,6 +45,7 @@ const ContactSection = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-700 transition-all duration-300"
+          onClick={() => router.push("/contact")}
         >
           Get in Touch
         </motion.button>

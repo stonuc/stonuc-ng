@@ -44,10 +44,10 @@ const Navbar = () => {
               <Link href="/about-us">About</Link>
             </li>
             <li>
-              <Link href="#services">Services</Link>
+              <Link href="/our-service">Services</Link>
             </li>
             <li>
-              <Link href="#contact">Contact</Link>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>
@@ -129,10 +129,10 @@ const Navbar = () => {
               <Link href="/about-us">About</Link>
             </li>
             <li>
-              <Link href="#services">Services</Link>
+              <Link href="/our-service">Services</Link>
             </li>
             <li>
-              <Link href="#solutions">Contact</Link>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
           <div className="flex px-3 flex-col  text-black gap-3">
