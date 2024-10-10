@@ -33,7 +33,7 @@ const Navbar = () => {
         <Image
           src={isActive ? "/stunuc0.png" : "/stunuc1.png"}
           alt="Stonuc Technologies Logo"
-          width={180}
+          width={140}
           height={40}
         />
       </div>
