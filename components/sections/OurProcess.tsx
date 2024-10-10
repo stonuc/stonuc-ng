@@ -53,7 +53,7 @@ export default function OurProcess() {
           </motion.h2>
           <motion.p variants={itemVariants} className="text-white mb-8">
             In today's digitally disrupted world, if you are not agile enough to implement your idea in weeks instead of
-            months, then you are behind. In Ryaktive, we use agile methodologies to deliver the business value as soon
+            months, then you are behind. In Stonuc, we use agile methodologies to deliver the business value as soon
             as possible. Agile methodology is all about delivering the business value instead of just following the
             agreed requirements in the signed contract. We believe that the nature of our customers' business is
             dynamic, and we chose to be agile when working with our customers and respond positively to our customers'
