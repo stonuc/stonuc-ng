@@ -48,7 +48,7 @@ export default function OurServices() {
   }
 
   return (
-    <section ref={ref} className="bg-gray-100 py-16">
+    <section id="service" ref={ref} className="bg-gray-100 py-16">
       <div className="container mx-auto px-4">
         <motion.div
           variants={containerVariants}

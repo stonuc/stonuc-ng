@@ -46,7 +46,7 @@ export default function WhoWeAre() {
   }
 
   return (
-    <section ref={ref} className="py-16 bg-white">
+    <section id="whoweare" ref={ref} className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <motion.div
           variants={containerVariants}

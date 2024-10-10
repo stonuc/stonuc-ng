@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className="hidden xl:flex space-x-4 text-sm md:text-base">
           <ul className="flex space-x-4">
             <li>
-              <Link href="#about">About</Link>
+              <Link href="/about-us">About</Link>
             </li>
             <li>
               <Link href="#services">Services</Link>

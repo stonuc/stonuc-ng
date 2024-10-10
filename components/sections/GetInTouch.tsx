@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Facebook, InstagramIcon, Linkedin, Twitter } from "lucide-react";
-import { useState, useTransition } from "react";
+import { useRef, useState, useTransition } from "react";
 import { submitContactForm } from "@/actions/submitForm";
 
 type FormErrors = {
@@ -13,7 +13,7 @@ type FormErrors = {
 export default function Component() {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.2,
   });
 
   const [isPending, startTransition] = useTransition();
@@ -22,6 +22,7 @@ export default function Component() {
     message?: string;
   } | null>(null);
   const [formErrors, setFormErrors] = useState<FormErrors | null>(null);
+  const formRef = useRef<HTMLFormElement | null>(null)
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -54,12 +55,13 @@ export default function Component() {
         setFormErrors(result.errors as FormErrors);
       } else {
         setFormStatus(result);
+        formRef.current?.reset();
       }
     });
   };
 
   return (
-    <section ref={ref} className="bg-gray-900 text-white py-16 relative"
+    <section id="contact" ref={ref} className="bg-gray-900 text-white py-16 relative"
       style={{
         backgroundImage: "url('/map.png?height=1080&width=1920')",
         backgroundSize: 'cover',
@@ -132,6 +134,7 @@ export default function Component() {
           <motion.form
             variants={itemVariants}
             action={handleSubmit}
+            ref={formRef}
             className="space-y-4"
           >
             <div>
