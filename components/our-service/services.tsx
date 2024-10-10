@@ -76,7 +76,7 @@ const ServicesSection = () => {
             variants={cardVariants}
             className="flex items-center flex-col md:flex-row gap-4 justify-between w-full max-w-4xl p-6 bg-gray-100 shadow-lg rounded-md relative"
           >
-            <div className="absolute left-10 -top-5 md:-left-10 flex items-center justify-center w-8 h-8 bg-blue-500 text-white rounded-full">
+            <div className="absolute left-11 -top-5 md:-left-10 flex items-center justify-center w-8 h-8 bg-blue-500 text-white rounded-full">
               {service.id}
             </div>
             <div className="w-full md:w-1/3 relative flex items-center justify-center bg-blue-500 rounded-md  h-40">
@@ -92,12 +92,7 @@ const ServicesSection = () => {
             <div className="w-full">
               <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
               <p className="text-gray-600">{service.description}</p>
-              <a
-                href={service.link}
-                className="text-blue-500 mt-4 inline-block"
-              >
-                Read More
-              </a>
+              
             </div>
           </motion.div>
         ))}

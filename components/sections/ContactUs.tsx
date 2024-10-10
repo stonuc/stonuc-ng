@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer"
 export default function ContactUs() {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.4,
+    threshold: 0.3,
   })
 
   const containerVariants = {
@@ -14,13 +14,13 @@ export default function ContactUs() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.5,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
@@ -53,7 +53,7 @@ export default function ContactUs() {
                 Send us a brief about your needs and we will get back to you within 48 hours!
               </motion.p>
               <motion.a
-                href="#contact"
+                href="/contact"
                 variants={itemVariants}
                 className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors"
               >

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Mail, Phone } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +26,7 @@ const Navbar = () => {
     setIsOpen((prev) => !prev);
   };
 
+  const router = useRouter()
   return (
     <header ref={headerRef} className={`
         flex justify-between items-center p-4 w-full text-white md:px-8 lg:px-16 ${isActive? 'bg-white fixed top-0 z-20 !text-black shadow-2xl' : ''}
@@ -150,7 +152,7 @@ const Navbar = () => {
               <Phone />
               +234 810 409 2397
             </a>
-            <button className=" contact-btn px-4 py-2 rounded">
+            <button onClick={() => router.push("/contact")} className=" contact-btn px-4 py-2 rounded">
               Contact us
             </button>
           </div>
@@ -171,7 +173,7 @@ const Navbar = () => {
           <Phone />
           +234 810 409 2397
         </a>
-        <button className=" w-fit text-nowrap contact-btn text-black px-4 py-2 rounded">
+        <button onClick={() => router.push("/contact")} className=" w-fit text-nowrap contact-btn text-black px-4 py-2 rounded">
           Contact us
         </button>
       </div>

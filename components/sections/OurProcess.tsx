@@ -59,12 +59,12 @@ export default function OurProcess() {
             dynamic, and we chose to be agile when working with our customers and respond positively to our customers'
             dynamic requirements.
           </motion.p>
-          <motion.button
+          {/* <motion.button
             variants={itemVariants}
             className="self-start bg-transparent border-2 border-white text-white px-6 py-2 rounded-md hover:bg-white hover:text-blue-600 backdrop-blur-lg transition-colors"
           >
             Read More
-          </motion.button>
+          </motion.button> */}
         </motion.div>
       </div>
     </section>

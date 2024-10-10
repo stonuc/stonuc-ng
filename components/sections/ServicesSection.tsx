@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 const services = [
   {
@@ -46,7 +47,7 @@ export default function OurServices() {
       },
     },
   }
-
+  const router  = useRouter()
   return (
     <section id="service" ref={ref} className="bg-gray-100 py-16">
       <div className="container mx-auto px-4">
@@ -80,7 +81,7 @@ export default function OurServices() {
               ))}
             </motion.div>
             <motion.div variants={itemVariants} className="text-right">
-              <button className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
+              <button onClick={() => router.push("/service")} className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
                 Read More
               </button>
             </motion.div>

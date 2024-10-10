@@ -86,11 +86,11 @@ export default function WhyChooseUs() {
               </motion.div>
             ))}
           </div>
-          <motion.div variants={itemVariants} className="text-center">
+          {/* <motion.div variants={itemVariants} className="text-center">
             <button className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
               Read More
             </button>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </section>

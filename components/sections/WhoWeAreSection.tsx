@@ -3,12 +3,16 @@
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 export default function WhoWeAre() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.3,
   })
+
+  const router  = useRouter()
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -82,6 +86,7 @@ export default function WhoWeAre() {
             <motion.button
               variants={itemVariants}
               className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors"
+              onClick={() => router.push("/contact")}
             >
               Read More
             </motion.button>
