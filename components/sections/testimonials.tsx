@@ -40,11 +40,11 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
       />
       <div>
         <h3 className="text-white font-semibold">{testimonial.name}</h3>
-        <p className="text-gray-400 text-sm">{testimonial.role}</p>
+        <p className="text-gray-200 text-sm">{testimonial.role}</p>
       </div>
     </div>
     <p className="text-gray-200 flex-grow">{testimonial.text}</p>
-    <div className="text-gray-500 text-right mt-4">
+    <div className="text-gray-200 text-right mt-4">
         <Quote />
     </div>
   </div>
