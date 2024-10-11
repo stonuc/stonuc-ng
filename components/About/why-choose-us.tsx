@@ -51,7 +51,7 @@ export default function WhyChooseUs() {
             variants={itemVariants}
             className="text-gray-600 text-center max-w-lg mb-8"
           >
-            IIn today's fast-paced world, if you are not agile enough to
+            In today's fast-paced world, if you are not agile enough to
             implement your ideas quickly, you may fall behind. At Stonuc, we can
             deliver a Minimum Viable Product (MVP) for your idea in just 7
             weeks.
