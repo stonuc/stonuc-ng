@@ -33,7 +33,7 @@ const CookieConsentBanner = () => {
           animate={{ y: 0 }}
           exit={{ y: "100%" }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed bottom-0 left-0 right-0 bg-white text-black p-4 shadow-lg z-50"
+          className="fixed bottom-0 left-0 right-0 bg-white border-t-primary text-black p-4 shadow-lg z-50"
         >
           <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
             <div className="mb-4 md:mb-0 mr-4 flex-grow">
@@ -58,7 +58,7 @@ const CookieConsentBanner = () => {
             </div>
             <button
               onClick={handleDecline}
-              className="absolute top-2 right-2 text-white  transition-colors"
+              className="absolute top-2 right-2 text-black  transition-colors"
               aria-label="Close"
             >
               <X size={20} />
