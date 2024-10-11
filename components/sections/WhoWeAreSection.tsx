@@ -1,18 +1,17 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import Image from "next/image"
-import { useRouter } from "next/navigation"
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function WhoWeAre() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.3,
-  })
+  });
 
-  const router  = useRouter()
-
+  const router = useRouter();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -22,7 +21,7 @@ export default function WhoWeAre() {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -34,7 +33,7 @@ export default function WhoWeAre() {
         stiffness: 100,
       },
     },
-  }
+  };
 
   const circleVariants = {
     hidden: { scale: 0.8, opacity: 0 },
@@ -47,7 +46,7 @@ export default function WhoWeAre() {
         delay: 0.2,
       },
     },
-  }
+  };
 
   return (
     <section id="whoweare" ref={ref} className="py-16 bg-white">
@@ -58,7 +57,10 @@ export default function WhoWeAre() {
           animate={inView ? "visible" : "hidden"}
           className="flex flex-col md:flex-row items-center"
         >
-          <motion.div variants={circleVariants} className="relative overflow-hidden w-64 h-64 md:w-96 md:h-96 mb-8 md:mb-0">
+          <motion.div
+            variants={circleVariants}
+            className="relative overflow-hidden w-64 h-64 md:w-96 md:h-96 mb-8 md:mb-0"
+          >
             <div className="absolute inset-0 border-4 border-blue-500 rounded-full" />
             <Image
               src="/who.png?height=384&width=384"
@@ -69,19 +71,30 @@ export default function WhoWeAre() {
             />
           </motion.div>
           <div className="md:ml-12 md:w-1/2">
-            <motion.h2 variants={itemVariants} className="text-4xl font-bold text-blue-500 mb-4">
+            <motion.h2
+              variants={itemVariants}
+              className="text-4xl font-bold text-blue-500 mb-4"
+            >
               Who We Are
             </motion.h2>
             <motion.p variants={itemVariants} className="text-gray-600 mb-4">
-              Stonuc is a software development agency.
+              Stonuc is a business and software consultation firm offering a
+              wide range of software development and UI/UX services.
             </motion.p>
-            <motion.p variants={itemVariants} className="text-xl font-semibold mb-4">
-              We help you transform your big idea into reality.
+            <motion.p
+              variants={itemVariants}
+              className="text-xl font-semibold mb-4"
+            >
+              We bring your vision to life by combining cutting-edge technology,
+              user experience design, and agile methodologies.
             </motion.p>
             <motion.p variants={itemVariants} className="text-gray-600 mb-6">
-              We combine proven and up-to-date technologies, user experience (UX) design techniques, data science
-              methods, and agile methodologies to quickly deliver scalable and beautifully crafted solutions and
-              products to our customers.
+              Our expertise lies in transforming ideas into fully functional and
+              scalable software products, delivered quickly and tailored to your
+              business needs. We work with clients across multiple industries,
+              including e-commerce, fintech, healthcare, and artificial
+              intelligence ensuring that our solutions are tailored to specific
+              market demands.
             </motion.p>
             <motion.button
               variants={itemVariants}
@@ -100,5 +113,5 @@ export default function WhoWeAre() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

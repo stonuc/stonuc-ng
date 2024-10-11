@@ -3,11 +3,11 @@ import React from 'react';
 
 const Caret = ({ className }: {className?: string}) => {
   return (
-    <span className={clsx(
+    <div className={clsx(
       "caret",
       className
     )}>
-    </span>
+    </div>
   );
 };
 

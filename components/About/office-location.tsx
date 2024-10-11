@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import Image from "next/image"
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import Image from "next/image";
 
 export default function OfficeLocation() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -18,7 +18,7 @@ export default function OfficeLocation() {
         staggerChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -30,7 +30,7 @@ export default function OfficeLocation() {
         stiffness: 100,
       },
     },
-  }
+  };
 
   return (
     <section ref={ref} className="bg-blue-500 text-white py-16">
@@ -52,15 +52,18 @@ export default function OfficeLocation() {
           </motion.div>
           <motion.div variants={itemVariants} className="text-center max-w-2xl">
             <p className="text-xl mb-4">
-              Our engineering office is located in Lagos, former capital of Nigeria.
+              Our engineering office is located in Lagos, former capital of
+              Nigeria.
             </p>
             <p className="text-lg">
-              Lagos became an IT outsourcing destination for many of European IT companies due to the availability of
-              highly talented IT human resources with very competitive rates and low operation costs
+              At Stonuc, we don't just offer services - we partner with you to
+              create innovative digital solutions that make an impact. From
+              software development to expert UI/UX design, we deliver results
+              that drive growth and success.
             </p>
           </motion.div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

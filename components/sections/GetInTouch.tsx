@@ -22,7 +22,7 @@ export default function Component() {
     message?: string;
   } | null>(null);
   const [formErrors, setFormErrors] = useState<FormErrors | null>(null);
-  const formRef = useRef<HTMLFormElement | null>(null)
+  const formRef = useRef<HTMLFormElement | null>(null);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -61,13 +61,17 @@ export default function Component() {
   };
 
   return (
-    <section id="contact" ref={ref} className="bg-gray-900 text-white py-16 relative"
+    <section
+      id="contact"
+      ref={ref}
+      className="bg-gray-900 text-white py-16 relative"
       style={{
         backgroundImage: "url('/map.png?height=1080&width=1920')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}>
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* Semi-transparent overlay */}
       <div className="absolute inset-0 bg-gray-900 bg-opacity-80"></div>
       <div className="container mx-auto px-4">
@@ -82,23 +86,27 @@ export default function Component() {
               variants={itemVariants}
               className="text-3xl font-bold mb-6"
             >
-              Get in touch
+              Ready to build the future? <br /> Let&apos;s make it happen.
             </motion.h2>
             <motion.p variants={itemVariants} className="mb-8">
-              Our engineering office is in Skopje, the capital of North
-              Macedonia. Skopje became an IT outsourcing destination for many of
-              European companies due to the availability of high talented IT
-              human resources with very competitive rates and low operation
-              costs.
+              At Stonuc, we don&apos;t just offer services - we partner with you
+              to create innovative digital solutions that make an impact. From
+              software development to expert UI/UX design, we deliver results
+              that drive growth and success.
             </motion.p>
             <motion.div variants={itemVariants} className="mb-8">
-              <h3 className="text-xl font-semibold mb-2">Our Address</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                Contact Information
+              </h3>
               <p>
-                North Macedonia, Skopje,
+                Nigeria Office
                 <br />
-                City Centre, City Trade Centre, River Bank,
+                Ikeja, Lagos, Quarter 12.
+              </p>
+              <p className="mt-4">
+                US Office
                 <br />
-                13th November St., Building 8, Entrance 1, Floor 9.
+                701 Tillery Street, Austin, Texas
               </p>
             </motion.div>
             <motion.div variants={itemVariants} className="mb-8">
@@ -119,16 +127,12 @@ export default function Component() {
                 <a href="#" className="text-white hover:text-gray-300">
                   <Linkedin size={24} />
                 </a>
-                <a href="#" className="text-white hover:text-gray-300">
-                  <Twitter size={24} />
-                </a>
               </div>
             </motion.div>
             <motion.div variants={itemVariants}>
-              <h3 className="text-xl font-semibold mb-2">Contact Us</h3>
-              <p className="mb-2">hello@stonuc.com</p>
+              <h3 className="text-xl font-semibold mb-2">Let&apos;s Talk!</h3>
+              <p className="mb-2">contact@stonuc.atoovis.com</p>
               <p className="mb-2">(+234) 810 409 2397</p>
-              <p>(+234) 302 919 1709</p>
             </motion.div>
           </div>
           <motion.form
@@ -173,8 +177,7 @@ export default function Component() {
                 variants={itemVariants}
                 type="tel"
                 name="phone"
-                placeholder="Your Phone number (e.g  +234 810 409 2397)"
-
+                placeholder="Your Phone Number (e.g., +234 810 409 2397)"
                 className="w-full p-2 bg-gray-800 rounded"
                 required
               />
@@ -188,7 +191,7 @@ export default function Component() {
               <motion.textarea
                 variants={itemVariants}
                 name="message"
-                placeholder="Tell us what are you looking for ..."
+                placeholder="Tell us what you're looking for..."
                 rows={4}
                 className="w-full p-2 bg-gray-800 rounded"
                 required

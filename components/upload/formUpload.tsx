@@ -15,7 +15,7 @@ type FormErrors = {
 const FileUploadForm = () => {
   const [files, setFiles] = useState<File[]>([]);
   const [phone, setPhone] = useState<string>("");
-  const maxFiles = 1;
+  const maxFiles = 5;
   const maxFileSize = 20 * 1024 * 1024; // 20MB overall limit
 
   const [ref, inView] = useInView({
@@ -58,7 +58,7 @@ const FileUploadForm = () => {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     maxSize: maxFileSize,
-    multiple: false,
+    multiple: true,
     accept: {
       "image/*": [".png", ".jpg", ".jpeg", ".gif"],
       "application/pdf": [".pdf"],
@@ -86,18 +86,30 @@ const FileUploadForm = () => {
     startTransition(async () => {
       let attachment: Attachment | null = null;
 
-      if (files) {
-        const fileContent = await files[0].arrayBuffer();
-        const base64Content = Buffer.from(fileContent).toString("base64");
+      if (files.length > 0) {
+        attachment = await Promise.all(
+          files.map(async (file) => {
+            const fileContent = await file.arrayBuffer();
+            const base64Content = Buffer.from(fileContent).toString("base64");
 
-        attachment = [
-          {
-            filename: files[0].name,
-            content: base64Content,
-          },
-        ];
+            return {
+              filename: file.name,
+              content: base64Content,
+            };
+          })
+        );
       }
+
       const parsedAttachment = attachment as Attachment;
+      console.log({
+        phone,
+        files: files.map((file) => file.name),
+        attachment: attachment?.map((attachment) => ({
+          filename: attachment.filename,
+          content: attachment.content,
+        })),
+      })
+      return
       const result = await submitApplicationForm(
         formData,
         phone,

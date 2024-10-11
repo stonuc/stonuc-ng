@@ -81,7 +81,7 @@ const TypingText: React.FC<TypingTextProps> = ({
           className=''
         >
           {displayedText}
-          {<Caret className='self-center ml-1 min-h-5' />}
+          {<Caret className='ml-1 min-h-5' />}
         </motion.span>
       )}
     </motion.div>

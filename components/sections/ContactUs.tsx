@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function ContactUs() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.3,
-  })
+  });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -17,7 +17,7 @@ export default function ContactUs() {
         staggerChildren: 0.5,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 30, opacity: 0 },
@@ -29,7 +29,7 @@ export default function ContactUs() {
         stiffness: 100,
       },
     },
-  }
+  };
 
   return (
     <section ref={ref} className="py-16 bg-white">
@@ -43,14 +43,23 @@ export default function ContactUs() {
           <div className="md:w-1/2 mb-8 md:mb-0">
             <motion.div variants={itemVariants} className="relative pl-6">
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500" />
-              <motion.h2 variants={itemVariants} className="text-4xl font-bold text-blue-500 mb-2">
+              <motion.h2
+                variants={itemVariants}
+                className="text-4xl font-bold text-blue-500 mb-2"
+              >
                 Contact Us Today
               </motion.h2>
-              <motion.h3 variants={itemVariants} className="text-2xl text-gray-700 mb-4">
-                to Talk About Your Needs
+              <motion.h3
+                variants={itemVariants}
+                className="text-xl text-gray-700 mb-4"
+              >
+                Tell us about your project, and we&apos;ll connect with you
+                within 48 hours to discuss how Stonuc can help bring your vision
+                to life.
               </motion.h3>
               <motion.p variants={itemVariants} className="text-gray-600 mb-6">
-                Send us a brief about your needs and we will get back to you within 48 hours!
+                Share a brief description of your needs, and our team will
+                tailor the right solution for you.
               </motion.p>
               <motion.a
                 href="/contact"
@@ -58,10 +67,14 @@ export default function ContactUs() {
                 className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors"
               >
                 Get in Touch
+
               </motion.a>
             </motion.div>
           </div>
-          <motion.div variants={itemVariants} className="md:w-1/2 flex justify-center md:justify-end">
+          <motion.div
+            variants={itemVariants}
+            className="md:w-1/2 flex justify-center md:justify-end"
+          >
             <div className="relative w-64 h-64">
               <div className="absolute inset-0 bg-blue-100 rounded-full" />
               <img
@@ -74,5 +87,5 @@ export default function ContactUs() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function VisionMissionSection() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -18,7 +18,7 @@ export default function VisionMissionSection() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -31,7 +31,7 @@ export default function VisionMissionSection() {
         duration: 0.8,
       },
     },
-  }
+  };
 
   const lineVariants = {
     hidden: { scaleX: 0 },
@@ -43,7 +43,7 @@ export default function VisionMissionSection() {
         duration: 0.8,
       },
     },
-  }
+  };
 
   return (
     <section ref={ref} className="py-16 bg-gray-100">
@@ -59,17 +59,23 @@ export default function VisionMissionSection() {
               variants={lineVariants}
               className="absolute top-0 left-0 w-1/3 h-px bg-blue-500 origin-left"
             />
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">OUR VISION</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              OUR VISION
+            </h2>
             <p className="text-xl text-gray-600">
-              We want to make the world a better place by delivering world-class software-driven solutions and products.
+              To empower businesses by providing top-quality software solutions
+              that drive innovation and success.
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="relative">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">OUR MISSION</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              OUR MISSION
+            </h2>
             <p className="text-xl text-gray-600">
-              We work with our customers to help them reach their goals and beyond, using technology innovation. We hire
-              top talents and invest in their growth.
+              We work closely with our clients to help them achieve their goals
+              through technology. We hire skilled professionals and support
+              their growth to ensure excellent service.
             </p>
             <motion.div
               variants={lineVariants}
@@ -79,5 +85,5 @@ export default function VisionMissionSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

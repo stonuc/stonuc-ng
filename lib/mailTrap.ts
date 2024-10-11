@@ -33,21 +33,20 @@ export const sendMail = async ({
       accountId: +MAILTRAP_ACCOUNTID,
     });
 
-    await client.send({
+   const response = await client.send({
       from: sender,
       to: recipients,
       subject,
       html,
-      attachments: file ? [
-        {
-            content:  file[0].content,
-            filename: file[0].filename,
-
-        }
-      ] : [],
+      attachments: file
+        ? file.map((f) => ({
+            content: f.content,
+            filename: f.filename,
+          }))
+        : [],
     });
-
     console.log("Email sent successfully!");
+    return response.success
   } catch (error: any) {
     console.error("Failed to send email:", error.message);
     throw error;

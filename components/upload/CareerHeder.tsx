@@ -51,7 +51,7 @@ export default function JoinOurTeam() {
           src="/joinourteam.png?height=1080&width=1920"
           alt="Office team working"
           layout="fill"
-          className="mix-blend-overlay opacity-50"
+          className="mix-blend-overlay object-cover opacity-50"
         />
       </motion.div>
       <div className="absolute inset-0 " />

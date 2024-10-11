@@ -1,36 +1,46 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const features = [
   {
     title: "Agile Delivery",
-    description: "In today's digital disrupted world, if you are not agile enough, you won't survive. Here at Hyperlink Infosystem, we make sure that you are ahead. We at Hyperlink can deliver the MVP for your idea in just seven weeks.",
+    description:
+      "Agile Approach Our agile methodologies ensure rapid development and adaptability to market changes. Your MVP can be ready in weeks, not months, ensuring you stay ahead of the competition.",
     icon: "/w0.png?height=80&width=80",
   },
   {
     title: "Quality",
-    description: "Quality is part of our DNA. Quality is not a marketing word we use to please our clients; quality is part of each step in our process. We follow best practices for software development and have multiple levels of quality checks and deliverables. Our testing starts with writing unit tests of each small function of code to automated functional testing and manual QA. We follow CI/CD process to automate our release process to eliminate human errors.",
+    description:
+      "Uncompromised Quality At Stonuc, quality is embedded into every phase of our process. From writing unit tests to functional testing and manual QA, we ensure a flawless final product.",
     icon: "/w1.png?height=80&width=80",
   },
   {
     title: "Security",
-    description: "The threat of cyber-attacks and data loss is growing everyday; a security breach will cost you much more than you think. At Hyperlink, our cybersecurity partners do a full security audit of our products before releasing them. We use certified secure cloud services to ensure that the deliveblue service or product continues to be secure.",
+    description:
+      "Strong Security Protocols Security is a top priority at Stonuc. We conduct rigorous security audits and use certified secure cloud services to keep your data safe from breaches. Our team holds certifications in advanced cybersecurity measures, ensuring that your product is always protected.",
     icon: "/w2.png?height=80&width=80",
   },
   {
     title: "Best Value for Money",
-    description: "Our engineering office is located in Skopje, the capital of North Macedonia. With a wide pool of young talented IT engineers and low operation costs, this gives us the advantage to deliver high quality products with comparably low cost.",
+    description:
+      "Stonuc offers premium solutions at competitive rates. By leveraging our global talent pool, we provide high-quality service while maintaining cost-efficiency.  We give you the best value for your money while meeting deadlines.",
     icon: "/w3.png?height=80&width=80",
   },
-]
+  {
+    title: "Seamless Communication",
+    description:
+      "We assign a dedicated project manager to every client to ensure clear and consistent communication throughout your project. You’ll always know your project's progress and can easily contact our team for updates.",
+    icon: "/w3.png?height=80&width=80",
+  },
+];
 
 export default function WhyChooseUs() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.3,
-  })
+  });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -40,7 +50,7 @@ export default function WhyChooseUs() {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -52,7 +62,7 @@ export default function WhyChooseUs() {
         stiffness: 100,
       },
     },
-  }
+  };
 
   return (
     <section id="whychooseus" ref={ref} className="py-16 bg-white">
@@ -75,12 +85,22 @@ export default function WhyChooseUs() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
-              <motion.div key={index} variants={itemVariants} className="flex space-x-4">
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="flex space-x-4"
+              >
                 <div className="flex-shrink-0">
-                  <img src={feature.icon} alt="" className="w-20 h-20 object-contain" />
+                  <img
+                    src={feature.icon}
+                    alt=""
+                    className="w-20 h-20 object-contain"
+                  />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {feature.title}
+                  </h3>
                   <p className="text-gray-600">{feature.description}</p>
                 </div>
               </motion.div>
@@ -94,5 +114,5 @@ export default function WhyChooseUs() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

@@ -31,7 +31,15 @@ const footerLinks = [
     items: [
       {
         title: "Join Our Team",
-        subitems: ["Software Developer", "Product Manager", "UX/UI Designer"],
+        subitems: [
+            "Software Developer", 
+            "Product Manager", 
+            "UX/UI Designer",
+            "Quality Assurance (QA) Engineer",
+            "Data Analyst",
+            "DevOps Engineer",
+            "Project Manager"
+        ],
       },
     ],
     link: "/career",
@@ -107,13 +115,23 @@ export default function Footer() {
           variants={itemVariants}
           className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400"
         >
-          <p>© {new Date().getFullYear()} Stonuc • All rights reserved.</p>
+          <Link href={"/"} className="text-white font-bold text-xl">Stonuc</Link>
+          <p>&copy; {new Date().getFullYear()} Stonuc or its affiliate. All rights reserved.</p>
+          <div className="gap-2 flex items-center">
           <Link
             href="/privacy-policy"
             className="hover:text-white mt-4 md:mt-0"
           >
             Privacy Policy
           </Link>
+          <span className="">|</span>
+          <Link
+            href="/terms"
+            className="hover:text-white mt-4 md:mt-0"
+          >
+            Terms of Service
+          </Link>
+          </div>
         </motion.div>
       </div>
     </motion.footer>

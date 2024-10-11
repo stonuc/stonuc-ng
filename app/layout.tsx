@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     description: "Software Consulting and Development",
     images: [
       {
-        url: "/images/og1.png",
+        url: "/og1.png",
       },
     ]
   },
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     description: "Software Consulting and Development",
     images: [
       {
-        url: "/images/og1.png",
+        url: "/og1.png",
       },
     ],
     siteName:  "Stonuc Technologies",

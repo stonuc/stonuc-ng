@@ -1,6 +1,7 @@
 "use client";
 import { servicesData } from "@/lib/data";
 import { motion, useInView } from "framer-motion";
+import { Dot } from "lucide-react";
 import { useRef } from "react";
 
 const ServicesSection = () => {
@@ -47,7 +48,7 @@ const ServicesSection = () => {
 
       <div className="mb-12">
         <motion.h2
-          className="text-blue-600 text-3xl ml-10 pl-10 md:pl-0 md:ml-0 text-left font-bold mb-8"
+          className="text-blue-500 text-3xl ml-10 pl-10 md:pl-0 md:ml-0 text-left font-bold mb-8"
           initial="hidden"
           animate="visible"
           variants={textVariants}
@@ -62,8 +63,9 @@ const ServicesSection = () => {
           variants={textVariants}
           transition={{ delay: 0.2 }}
         >
-          We build world-class software by focusing on user experience combined
-          with data analytics to deliver engaging web and mobile apps.
+          At Stonuc, we are committed to delivering quality software solutions
+          on time. We combine user experience with data analytics to create
+          engaging web and mobile applications tailored to your needs.
         </motion.p>
       </div>
 
@@ -93,6 +95,19 @@ const ServicesSection = () => {
             <div className="w-full">
               <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
               <p className="text-gray-600">{service.description}</p>
+              <div className="">
+                {
+                  service.subitem.map((sub, i) =>  (
+                    <div className="ml-4 mt-2">
+                      <h4 className="text-md inline-flex text-blue-500 font-semibold">
+                        <Dot/>
+                        {sub.title}
+                      </h4>
+                      <p className="text-primary ml-7">{sub.describtion}</p>
+                    </div>
+                  ))
+                }
+              </div>
             </div>
           </motion.div>
         ))}

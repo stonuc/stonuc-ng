@@ -3,24 +3,91 @@ export const servicesData = [
     id: 1,
     title: "Digital Product Implementation",
     description:
-      "Whether you are looking to build an online store, an online marketplace, a social network platform, or something totally new, we are willing to work with you as your IT partner, step by step, to launch your new product or service and continue to support you after.",
+      "Ready to bring your idea to life? Whether you’re developing an online store, marketplace, social network, or a unique concept, we partner with you at every step. Our team ensures a seamless launch and ongoing support to meet your evolving needs.",
     image: "/tree0.jpeg",
     link: "#",
+    subitem: [
+      {
+        title: "Collaborative Approach",
+        describtion: "Work closely with our experts.",
+      },
+      {
+        title: "End-to-End Support",
+        describtion:
+          "From conception to post-launch, we've got you covered.",
+      },
+      {
+        title: "Timely Deliverables",
+        describtion:
+          "We pride ourselves on hitting deadlines without compromising quality.",
+      },
+    ],
   },
   {
     id: 2,
     title: "Customer Experience Engineering",
     description:
-      "Customer or user experience is now the key differentiator for users to use a specific product or a service provider over the other. In today’s digitally disrupted world, it is easier to track and analyze the way prospective customers interact with your product or service to understand and enhance their interactions or experiences.",
+      "In a crowded market, exceptional customer experience sets you apart. We track and analyze user interactions to optimize every touchpoint, enhancing satisfaction and loyalty.",
     image: "/tree1.png",
     link: "#",
+    subitem: [
+      {
+        title: "User-Centric Strategies",
+        describtion: "Create experiences that resonate.",
+      },
+      {
+        title: "Data-Driven Insights",
+        describtion: "Leverage analytics to inform decisions.",
+      },
+      {
+        title: "Quality Assurance",
+        describtion: "Deliver consistent, high-quality experiences.",
+      },
+    ],
   },
   {
     id: 3,
     title: "Technology Talent Management",
     description:
-      "Whether you know what technology talents you need or not, we can work with you to identify your needs. With our access to a wide pool of talents covering a wide range of technologies at a reasonable cost, we can get you the best talents in the market according to your needs.",
+      "Not sure what tech talent you need? No problem! We help you identify your requirements and access a wide pool of skilled professionals, ensuring you have the right expertise for your project.",
     image: "/tree2.png",
     link: "#",
+    subitem: [
+      {
+        title: "Tailored Solutions",
+        describtion: "Find talents that fit your specific needs.",
+      },
+      {
+        title: "Cost-Effective Access",
+        describtion: "Get top talent at competitive rates.",
+      },
+      {
+        title: "Commitment to Quality",
+        describtion: "We ensure that only the best professionals join your team.",
+      },
+    ],
   },
 ] as const;
+
+export const navbarLinks = [
+  {
+    title: "Home",
+    link: "/"
+  },
+  {
+    title: "About",
+    link: "/about-us"
+  },
+  {
+    title: "Service",
+    link: "/our-service"
+  },
+  {
+    title: "Contact",
+    link: "/contact"
+  },
+  {
+    title: "Career",
+    link: "/career"
+  },
+]

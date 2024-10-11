@@ -21,13 +21,13 @@ export default function LandingPage() {
         <Navbar />
 
         <main className="flex flex-col items-center justify-center h-full text-white text-center">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">Software Consulting and Development</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">Software Development and <br /> Business Consulting Services</h1>
           <div className="text-2xl md:text-3xl md:gap-3">
             <span>We </span>
-            <div className="block border min-h-9 min-w-44 px-2">
-              <TypingText texts={["Safeguard", "Drive", "Streamline", "Streamline"]} />
+            <div className="block border-b-4 min-h-9 min-w-44 px-2">
+              <TypingText texts={["Promote", "Inspire", "Streamline", "Archieve"]} />
             </div>
-            <span> project success</span>
+            <span>Success in Your Projects</span>
           </div>
         </main>
       </div>
