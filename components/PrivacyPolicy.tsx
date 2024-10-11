@@ -107,7 +107,7 @@ const PrivacyPolicy = () => {
           className="mb-6"
         >
           <h2
-            className={`text-lg md:text-2xl text-blue-500 font-semibold mb-2 ${
+            className={`text-lg md:text-2xl text-primary font-semibold mb-2 ${
               section.fontSize || ""
             }`}
           >

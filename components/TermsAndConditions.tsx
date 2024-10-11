@@ -94,7 +94,7 @@ const TermsAndConditions = () => {
           transition={{ delay: 0.3 * (index + 1), duration: 0.5 }}
           className="mb-4"
         >
-          <h2 className={`text-lg md:text-2xl text-blue-500 font-semibold mb-2 `}>
+          <h2 className={`text-lg md:text-2xl text-primary font-semibold mb-2 `}>
             {section.title}
           </h2>
           {section.description && (
