@@ -1,36 +1,34 @@
 "use client"
 
-import { motion, useAnimationControls } from "framer-motion"
+import { motion, useAnimationControls, useDragControls, PanInfo } from "framer-motion"
 import { Quote } from "lucide-react"
 import Image from "next/image"
-import { useEffect } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const testimonials = [
-  [
-    {
-      name: "Michael A.",
-      role: "CEO of FinTech Innovators",
-      image: "/user.png?height=100&width=100",
-      text: "Working with Stonuc was a game-changer for our startup. They not only understood our vision but also helped us refine it into a scalable product. Their agile approach allowed us to launch our MVP in record time, and their continuous support has been invaluable as we grow. I can't recommend them highly enough!"
-    },
-    {
-      name: "Gift Lewis.",
-      role: "Founder of EnoShop",
-      image: "/user.png?height=100&width=100",
-      text: "Stonuc exceeded our expectations at every stage of the project. Their focus on user experience transformed our online platform into a seamless shopping experience for our customers. The team was communicative and proactive, making the entire development process enjoyable and efficient. We're thrilled with the results!",
-    },
-    {
-      name: "David T.",
-      role: "CTO of HealthTech Solutions",
-      image: "/user.png?height=100&width=100",
-      text: "The collaboration with Stonuc was exceptional. They brought a wealth of expertise in software development and UI/UX design, helping us create a health management app that users love. Their attention to detail and commitment to quality are unmatched. We look forward to continuing our partnership!",
-    },
-  ],
+  {
+    name: "Michael A.",
+    role: "CEO of FinTech Innovators",
+    image: "/user.png?height=100&width=100",
+    text: "Working with Stonuc was a game-changer for our startup. They not only understood our vision but also helped us refine it into a scalable product. Their agile approach allowed us to launch our MVP in record time, and their continuous support has been invaluable as we grow. I can't recommend them highly enough!"
+  },
+  {
+    name: "Gift Lewis.",
+    role: "Founder of EnoShop",
+    image: "/user.png?height=100&width=100",
+    text: "Stonuc exceeded our expectations at every stage of the project. Their focus on user experience transformed our online platform into a seamless shopping experience for our customers. The team was communicative and proactive, making the entire development process enjoyable and efficient. We're thrilled with the results!",
+  },
+  {
+    name: "David T.",
+    role: "CTO of HealthTech Solutions",
+    image: "/user.png?height=100&width=100",
+    text: "The collaboration with Stonuc was exceptional. They brought a wealth of expertise in software development and UI/UX design, helping us create a health management app that users love. Their attention to detail and commitment to quality are unmatched. We look forward to continuing our partnership!",
+  },
 ]
 
-type Testimonials = typeof testimonials[0]
+type Testimonial = typeof testimonials[0]
 
-const TestimonialCard = ({ testimonial }: { testimonial: Testimonials[0] }) => (
+const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   <div className="bg-blue-800 p-6 rounded-lg shadow-lg flex flex-col h-full">
     <div className="flex items-center mb-4">
       <Image
@@ -52,28 +50,63 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonials[0] }) => (
   </div>
 )
 
-const MarqueeRow = ({ testimonials, direction, speed }: { testimonials: Testimonials, direction: 1 | -1, speed: number }) => {
+const TestimonialsCarousel = ({ testimonials }: { testimonials: Testimonial[] }) => {
   const controls = useAnimationControls()
-  const totalWidth = testimonials.length * 320 // 320px is the width of each card plus gap
+  const dragControls = useDragControls()
+  const [isPaused, setIsPaused] = useState(false)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  const cardWidth = 300
+  const cardGap = 24
+  const totalWidth = testimonials.length * (cardWidth + cardGap)
+
+  const animate = async () => {
+    await controls.start({
+      x: -totalWidth,
+      transition: { duration: 30, ease: "linear" }
+    })
+    controls.set({ x: 0 })
+    animate()
+  }
 
   useEffect(() => {
-    const animate = async () => {
-      await controls.start({
-        x: direction * -totalWidth,
-        transition: { duration: speed, ease: "linear" }
-      })
-      controls.set({ x: 0 })
+    if (!isPaused) {
       animate()
+    } else {
+      controls.stop()
     }
-    animate()
-  }, [controls, direction, speed, totalWidth])
+  }, [isPaused])
+
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    const change = info.offset.x
+    const velocity = info.velocity.x
+    
+    if (Math.abs(change) > cardWidth / 4 || Math.abs(velocity) > 200) {
+      const direction = change < 0 ? 1 : -1
+      const newIndex = (currentIndex + direction + testimonials.length) % testimonials.length
+      setCurrentIndex(newIndex)
+      controls.start({ x: -newIndex * (cardWidth + cardGap) })
+    } else {
+      controls.start({ x: -currentIndex * (cardWidth + cardGap) })
+    }
+  }
 
   return (
-    <div className="flex overflow-hidden">
+    <div 
+      ref={containerRef}
+      className="overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <motion.div
         className="flex gap-6"
-        animate={controls}
         style={{ width: `${totalWidth * 2}px` }}
+        animate={controls}
+        drag="x"
+        dragControls={dragControls}
+        dragConstraints={containerRef}
+        onDragEnd={handleDragEnd}
       >
         {[...testimonials, ...testimonials].map((testimonial, index) => (
           <div key={index} className="w-[300px] flex-shrink-0">
@@ -93,9 +126,7 @@ export default function Testimonials() {
         <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
             What our customers have to say about us.
         </p>
-        <div className="space-y-12">
-          <MarqueeRow testimonials={testimonials[0]} direction={1} speed={60} />
-        </div>
+        <TestimonialsCarousel testimonials={testimonials} />
       </div>
     </section>
   )
