@@ -171,7 +171,7 @@ const FileUploadForm = () => {
             <p className="text-red-500 text-sm mt-1">{formErrors.email[0]}</p>
           )}
           <PhoneInput
-            country={"ng"}
+            country={"us"}
             value={phone}
             onChange={setPhone}
             inputClass="!w-full !h-full !border !rounded-md !p-2 !pl-11  focus:outline-none focus:ring-2 focus:ring-primary"

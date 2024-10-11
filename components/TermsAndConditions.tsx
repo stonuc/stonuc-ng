@@ -69,7 +69,7 @@ const termsContent = [
   {
     title: "Contact Us",
     description: "If you have questions about these Terms, please reach out",
-    list: ["Email: contact@stonuc.atoovis.com", "Phone: +2348104092397"],
+    list: ["Email: contact@stonuc.atoovis.com",],
   },
   {
     title: "Thank you for using Stonuc!",

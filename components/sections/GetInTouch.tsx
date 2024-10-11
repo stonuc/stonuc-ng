@@ -98,15 +98,15 @@ export default function Component() {
               <h3 className="text-xl font-semibold mb-2">
                 Contact Information
               </h3>
-              <p>
-                Nigeria Office
-                <br />
-                Ikeja, Lagos, Quarter 12.
-              </p>
               <p className="mt-4">
                 US Office
                 <br />
                 701 Tillery Street, Austin, Texas
+              </p>
+              <p>
+                Nigeria Office
+                <br />
+                Ikeja, Lagos, Quarter 12.
               </p>
             </motion.div>
             <motion.div variants={itemVariants} className="mb-8">
@@ -132,7 +132,6 @@ export default function Component() {
             <motion.div variants={itemVariants}>
               <h3 className="text-xl font-semibold mb-2">Let&apos;s Talk!</h3>
               <p className="mb-2">contact@stonuc.atoovis.com</p>
-              <p className="mb-2">(+234) 810 409 2397</p>
             </motion.div>
           </div>
           <motion.form
@@ -177,7 +176,7 @@ export default function Component() {
                 variants={itemVariants}
                 type="tel"
                 name="phone"
-                placeholder="Your Phone Number (e.g., +234 810 409 2397)"
+                placeholder="Your Phone Number (e.g., +1 000 000 0000)"
                 className="w-full p-2 bg-gray-800 rounded"
                 required
               />

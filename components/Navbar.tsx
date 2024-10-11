@@ -176,13 +176,13 @@ const Navbar = () => {
               <Mail size={20} />
               contact@stonuc.atoovis.com
             </a>
-            <a
+            {/* <a
               href="tel:+2348104092397"
               className="flex items-start w-full text-primary gap-3"
             >
               <Phone size={20} />
               (+234) 810 409 2397
-            </a>
+            </a> */}
             <button
               onClick={() => router.push("/contact")}
               className=" contact-btn px-4 py-2 bg-primary text-white rounded"
@@ -202,7 +202,7 @@ const Navbar = () => {
           <Mail />
           contact@stonuc.atoovis.com
         </a>
-        <a
+        {/* <a
           href="tel:+2348104092397"
           className={`flex items-start  w-full gap-3 ${
             isActive ? "text-black" : "text-white"
@@ -210,7 +210,7 @@ const Navbar = () => {
         >
           <Phone />
           (+234) 810 409 2397
-        </a>
+        </a> */}
         <button
           onClick={() => router.push("/contact")}
           className={`w-fit text-nowrap ${isActive ? "contact-btn" : "contact-btn-v2"}  px-4 py-2 rounded ${isActive ? "bg-primary text-white" : "bg-white text-primary"}`}
