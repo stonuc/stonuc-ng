@@ -3,11 +3,6 @@ import { motion } from "framer-motion";
 
 const privacyPolicyData = [
   {
-    title: "Privacy Policy",
-    description:
-      "This Privacy Policy outlines how Stonuc collects, uses, and protects your personal information when you use our services. We are committed to safeguarding your privacy and ensuring that your personal data is handled responsibly.",
-  },
-  {
     title: "What Personal Data We Collect",
     description: "",
     listItems: [
@@ -95,6 +90,14 @@ const PrivacyPolicy = () => {
       transition={{ duration: 0.5 }}
       className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg"
     >
+      <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
+      <p className="text-gray-600 mb-4">Last Updated: October 10, 2024</p>
+      <p className="text-gray-800 mb-4">
+        This Privacy Policy outlines how Stonuc collects, uses, and protects
+        your personal information when you use our services. We are committed to
+        safeguarding your privacy and ensuring that your personal data is
+        handled responsibly.
+      </p>
       {privacyPolicyData.map((section, index) => (
         <motion.div
           key={index}
@@ -103,14 +106,24 @@ const PrivacyPolicy = () => {
           transition={{ delay: 0.3 * (index + 1), duration: 0.5 }}
           className="mb-6"
         >
-          <h2 className={`text-lg md:text-2xl font-semibold mb-2 ${section.fontSize || ""}`}>{section.title}</h2>
+          <h2
+            className={`text-lg md:text-2xl text-blue-500 font-semibold mb-2 ${
+              section.fontSize || ""
+            }`}
+          >
+            {section.title}
+          </h2>
           {section.description && (
-            <p className="text-gray-600 mb-2 text-wrap max-w-sm md:max-w-xl">{section.description}</p>
+            <p className="text-gray-600 mb-2 text-wrap max-w-sm md:max-w-xl">
+              {section.description}
+            </p>
           )}
           {section.listItems && (
             <ul className="list-disc list-inside mb-4">
               {section.listItems.map((item, itemIndex) => (
-                <li key={itemIndex} className="max-w-xs md:max-w-xl">{item}</li>
+                <li key={itemIndex} className="max-w-xs md:max-w-xl">
+                  {item}
+                </li>
               ))}
             </ul>
           )}

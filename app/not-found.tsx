@@ -4,7 +4,7 @@ import React from "react";
 const page = () => {
   return (
     <div className="">
-      <div className="bg-blue-600">
+      <div className="bg-primary">
       <Navbar/>
       </div>
       <NotFound />

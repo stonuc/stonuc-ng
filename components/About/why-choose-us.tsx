@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-4xl font-bold text-blue-500 mb-6"
+            className="text-4xl font-bold text-primary mb-6"
           >
             Why Choose Us?
           </motion.h2>
@@ -71,7 +71,7 @@ export default function WhyChooseUs() {
             </div>
             <div className="max-w-xl">
               <h3 className="text-2xl font-semibold mb-2">Chris Emeka</h3>
-              <p className="text-blue-500 mb-4">Founder</p>
+              <p className="text-primary mb-4">Founder</p>
               <p className="text-gray-600">
                 Chris has been working in IT industry since 2004. He worked for
                 big and prestigious organizations handling large-scale digital

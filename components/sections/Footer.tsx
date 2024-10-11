@@ -9,20 +9,30 @@ const footerLinks = [
     title: "Our Services",
     items: [
       {
-        title: "Digital Product Implementation",
-        subitems: ["Startups", "E-commerce"],
-      },
-      {
-        title: "Customer Experience Engineering",
+        title: "Digital Product Development",
         subitems: [
-          "Experience Engineering",
-          "Process Re-Engineering & Automation",
-          "Customers Data Governance",
+          "E-commerce",
+          "Fintech",
+          "Healthtech",
+          "E-Learning",
+          "Retail",
+          "Real estate",
+          "Artificial Intelligence",
         ],
       },
       {
-        title: "Technology & Engineering Outsourcing",
-        subitems: ["Data Scientists", "UI/UX Designers", "Software Engineers"],
+        title: "User Experience and Design",
+        subitems: ["Customer Experience", "Engineering", "UI/UX Design"],
+      },
+      {
+        title: "Engineering and Data Solutions",
+        subitems: [
+          "Process Automation",
+          "Data Governance",
+          "Technology Outsourcing",
+          "Data Scientists",
+          "Software Engineers",
+        ],
       },
     ],
   },
@@ -32,13 +42,13 @@ const footerLinks = [
       {
         title: "Join Our Team",
         subitems: [
-            "Software Developer", 
-            "Product Manager", 
-            "UX/UI Designer",
-            "Quality Assurance (QA) Engineer",
-            "Data Analyst",
-            "DevOps Engineer",
-            "Project Manager"
+          "Software Developer",
+          "Product Manager",
+          "UX/UI Designer",
+          "Quality Assurance (QA) Engineer",
+          "Data Analyst",
+          "DevOps Engineer",
+          "Project Manager",
         ],
       },
     ],
@@ -109,28 +119,30 @@ export default function Footer() {
         </div>
         <motion.hr
           variants={itemVariants}
-          className="border-t border-blue-600 my-8"
+          className="border-t border-primary my-8"
         />
         <motion.div
           variants={itemVariants}
           className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400"
         >
-          <Link href={"/"} className="text-white font-bold text-xl">Stonuc Technologies</Link>
-          <p>&copy; {new Date().getFullYear()} Stonuc or its affiliate. All rights reserved.</p>
+          <Link href={"/"} className="text-white font-bold text-xl">
+            Stonuc Technologies
+          </Link>
+          <p>
+            &copy; {new Date().getFullYear()} Stonuc or its affiliate. All
+            rights reserved.
+          </p>
           <div className="gap-2 flex items-center">
-          <Link
-            href="/privacy-policy"
-            className="hover:text-white mt-4 md:mt-0"
-          >
-            Privacy Policy
-          </Link>
-          <span className="mt-3 md:mt-0">|</span>
-          <Link
-            href="/terms"
-            className="hover:text-white mt-4 md:mt-0"
-          >
-            Terms of Service
-          </Link>
+            <Link
+              href="/privacy-policy"
+              className="hover:text-white mt-4 md:mt-0"
+            >
+              Privacy Policy
+            </Link>
+            <span className="mt-3 md:mt-0">|</span>
+            <Link href="/terms" className="hover:text-white mt-4 md:mt-0">
+              Terms of Service
+            </Link>
           </div>
         </motion.div>
       </div>

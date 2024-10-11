@@ -61,7 +61,7 @@ export default function WhoWeAre() {
             variants={circleVariants}
             className="relative  w-64 h-64 md:w-96 md:h-96 mb-8 md:mb-0"
           >
-            <div className="absolute overflow-hidden inset-0 border-4 border-blue-500 rounded-full" />
+            <div className="absolute overflow-hidden inset-0 border-4 border-primary rounded-full" />
             <Image
               src="/main-team.png?height=384&width=384"
               alt="Team working together"
@@ -73,7 +73,7 @@ export default function WhoWeAre() {
           <div className="md:ml-12 md:w-1/2">
             <motion.h2
               variants={itemVariants}
-              className="text-4xl font-bold text-blue-500 mb-4"
+              className="text-4xl font-bold text-primary mb-4"
             >
               Who We Are
             </motion.h2>
@@ -98,7 +98,7 @@ export default function WhoWeAre() {
             </motion.p>
             <motion.button
               variants={itemVariants}
-              className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors"
+              className="bg-primary text-white px-6 py-2 rounded-md hover:bg-primary transition-colors"
               onClick={() => router.push("/contact")}
             >
               Get Started
@@ -106,7 +106,7 @@ export default function WhoWeAre() {
           </div>
           <motion.div
             variants={itemVariants}
-            className="hidden md:block absolute right-0 top-0 bottom-0 w-8 text-blue-500 text-6xl"
+            className="hidden md:block absolute right-0 top-0 bottom-0 w-8 text-primary text-6xl"
           >
             ]
           </motion.div>

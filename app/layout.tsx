@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/sections/Footer";
+import CookieConsentBanner from "@/components/cookie-consent-banner";
 
 export const dynamic = "force-dynamic";
 export const fetchCache = "force-no-store";
@@ -112,6 +113,7 @@ export default function RootLayout({
       >
         {children}
         <Footer />
+        <CookieConsentBanner/>
       </body>
     </html>
   );

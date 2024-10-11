@@ -77,7 +77,7 @@ export default function OurTeam() {
           <div className="w-full flex flex-col items-center">
             <motion.h2
               variants={itemVariants}
-              className="text-4xl font-bold text-blue-500 mb-4"
+              className="text-4xl font-bold text-primary mb-4"
             >
               Our Team
             </motion.h2>
@@ -99,7 +99,7 @@ export default function OurTeam() {
               >
                 <motion.div
                   variants={imageVariants}
-                  className="w-40 h-40 rounded-full border-2 border-blue-500 overflow-hidden mb-4"
+                  className="w-40 h-40 rounded-full border-2 border-primary overflow-hidden mb-4"
                 >
                   <Image
                     src={member.image}

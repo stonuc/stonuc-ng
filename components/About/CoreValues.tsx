@@ -57,12 +57,12 @@ export default function CoreValues() {
         >
           <motion.div
             variants={lineVariants}
-            className="absolute left-0 top-0 bottom-0 w-px bg-blue-500 origin-top"
+            className="absolute left-0 top-0 bottom-0 w-px bg-primary origin-top"
           />
           <div className="pl-8 flex-1">
             <motion.h2
               variants={itemVariants}
-              className="text-4xl font-light text-blue-500 mb-4"
+              className="text-4xl font-semibold text-primary mb-4"
             >
               CORE VALUES
             </motion.h2>
@@ -76,7 +76,7 @@ export default function CoreValues() {
                   className="text-xl md:text-2xl font-bold"
                 >
                   Quality Work
-                  <hr className="border-blue-100 mb-3" />
+                  <hr className="border-primary/10 mb-3" />
                 </motion.h2>
                 <motion.p
                   variants={itemVariants}
@@ -96,7 +96,7 @@ export default function CoreValues() {
                   className="text-xl md:text-2xl font-bold"
                 >
                   Timely Delivery
-                  <hr className="border-blue-100 mb-3" />
+                  <hr className="border-primary/10 mb-3" />
                 </motion.h2>
                 <motion.p
                   variants={itemVariants}
@@ -115,7 +115,7 @@ export default function CoreValues() {
                   className="text-xl md:text-2xl font-bold"
                 >
                   Effective Communication
-                  <hr className="border-blue-100 mb-3" />
+                  <hr className="border-primary/10 mb-3" />
                 </motion.h2>
                 <motion.p
                   variants={itemVariants}
@@ -134,7 +134,7 @@ export default function CoreValues() {
                   className="text-xl md:text-2xl font-bold"
                 >
                   Passion for Change
-                  <hr className="border-blue-100 mb-3" />
+                  <hr className="border-primary/10 mb-3" />
                 </motion.h2>
                 <motion.p
                   variants={itemVariants}

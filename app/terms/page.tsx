@@ -5,7 +5,7 @@ import TermsAndConditions from "@/components/TermsAndConditions";
 const TermsAndConditionsPage = () => {
   return (
     <div className="overflow-hidden">
-      <div className="bg-blue-500">
+      <div className="bg-primary">
         <Navbar />
       </div>
       <div className=" flex my-10 overflow-hidden items-center justify-center">

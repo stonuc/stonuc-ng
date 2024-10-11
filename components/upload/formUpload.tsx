@@ -142,7 +142,7 @@ const FileUploadForm = () => {
             type="text"
             placeholder="Name*"
             name="name"
-            className="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary"
             required
           />
           {formErrors?.name && (
@@ -152,7 +152,7 @@ const FileUploadForm = () => {
             type="text"
             placeholder="Surname*"
             name="surname"
-            className="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary"
             required
           />
           {formErrors?.surname && (
@@ -164,7 +164,7 @@ const FileUploadForm = () => {
             type="email"
             name="email"
             placeholder="E-Mail*"
-            className="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary"
             required
           />
           {formErrors?.email && (
@@ -174,7 +174,7 @@ const FileUploadForm = () => {
             country={"ng"}
             value={phone}
             onChange={setPhone}
-            inputClass="!w-full !h-full !border !rounded-md !p-2 !pl-11  focus:outline-none focus:ring-2 focus:ring-blue-500"
+            inputClass="!w-full !h-full !border !rounded-md !p-2 !pl-11  focus:outline-none focus:ring-2 focus:ring-primary"
             containerClass="w-full"
             autoFormat
             enableSearch
@@ -188,7 +188,7 @@ const FileUploadForm = () => {
         <div
           {...getRootProps()}
           className={`border-2 border-dashed p-4 rounded-md mb-4 cursor-pointer ${
-            isDragActive ? "border-blue-500" : "border-gray-300"
+            isDragActive ? "border-primary" : "border-gray-300"
           }`}
         >
           <input {...getInputProps()} />
@@ -212,7 +212,7 @@ const FileUploadForm = () => {
           variants={itemVariants}
           type="submit"
           disabled={isPending}
-          className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors disabled:opacity-50"
+          className="w-full bg-primary text-white py-2 px-4 rounded hover:bg-primary/90 transition-colors disabled:opacity-50"
         >
           {isPending ? "Sending..." : "Send"}
         </motion.button>

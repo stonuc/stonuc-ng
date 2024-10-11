@@ -36,7 +36,7 @@ const ContactSection = ({ isService = false }: { isService?: boolean }) => {
         className="text-center max-w-4xl mx-auto p-8 bg-white shadow-lg rounded-lg"
       >
         <div className="flex flex-col md:flex-row items-center">
-          <h2 className="text-3xl max-w-lg font-bold text-blue-600 md:mr-4">
+          <h2 className="text-3xl max-w-lg font-bold text-primary md:mr-4">
             {isService
               ? "Contact Us Today to Discuss Your Needs!"
               : "Contact Us Today"}
@@ -51,7 +51,7 @@ const ContactSection = ({ isService = false }: { isService?: boolean }) => {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-700 transition-all duration-300"
+          className="mt-6 px-6 py-3 bg-primary text-white rounded-full shadow-md hover:bg-primary/90 transition-all duration-300"
           onClick={() => router.push("/contact")}
         >
           Get in Touch

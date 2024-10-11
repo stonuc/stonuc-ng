@@ -29,7 +29,7 @@ const testimonials = [
 type Testimonial = typeof testimonials[0]
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className="bg-blue-800 p-6 rounded-lg shadow-lg flex flex-col h-full">
+  <div className="bg-primary p-6 rounded-lg shadow-lg flex flex-col h-full">
     <div className="flex items-center mb-4">
       <Image
         src={testimonial.image}
@@ -50,30 +50,45 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   </div>
 )
 
-const TestimonialsCarousel = ({ testimonials }: { testimonials: Testimonial[] }) => {
+interface TestimonialsCarouselProps {
+  testimonials: Testimonial[]
+  speed?: number
+  isInfinite?: boolean
+}
+
+const TestimonialsCarousel = ({ testimonials, speed = 30, isInfinite = true }: TestimonialsCarouselProps) => {
   const controls = useAnimationControls()
   const dragControls = useDragControls()
   const [isPaused, setIsPaused] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
+  const animationRef = useRef<number | null>(null)
 
   const cardWidth = 300
   const cardGap = 24
   const totalWidth = testimonials.length * (cardWidth + cardGap)
 
-  const animate = async () => {
-    await controls.start({
-      x: -totalWidth,
-      transition: { duration: 30, ease: "linear", repeat: Infinity }
-    })
+  const animate = (timestamp: number) => {
+    if (!containerRef.current) return
+
+    const progress = (timestamp % (speed * 1000)) / (speed * 1000)
+    const x = -progress * totalWidth
+
+    controls.set({ x })
+
+    if (isInfinite || progress < 1) {
+      animationRef.current = requestAnimationFrame(animate)
+    }
   }
 
   useEffect(() => {
-    if (!isPaused) {
-      animate()
-    } else {
-      controls.stop()
+    animationRef.current = requestAnimationFrame(animate)
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+      }
     }
-  }, [isPaused])
+  }, [speed, isInfinite])
 
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     if (!containerRef.current) return
@@ -83,33 +98,24 @@ const TestimonialsCarousel = ({ testimonials }: { testimonials: Testimonial[] })
     const currentPosition = info.point.x
 
     let newX = (currentPosition % totalWidth) - draggedDistance
-    if (newX > 0) newX -= totalWidth
-    if (newX < -totalWidth) newX += totalWidth
+    if (isInfinite) {
+      if (newX > 0) newX -= totalWidth
+      if (newX < -totalWidth) newX += totalWidth
+    } else {
+      newX = Math.max(Math.min(newX, 0), -totalWidth + containerWidth)
+    }
 
-    controls.start({ x: newX, transition: { duration: 0.5 } })
-  }
-
-  const handlePointerDown = () => {
-    setIsPaused(true)
-  }
-
-  const handlePointerUp = () => {
-    setIsPaused(false)
+    controls.set({ x: newX })
   }
 
   return (
     <div 
       ref={containerRef}
       className="overflow-hidden cursor-grab active:cursor-grabbing"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onPointerDown={handlePointerDown}
-      onPointerUp={handlePointerUp}
-      onPointerLeave={handlePointerUp}
     >
       <motion.div
         className="flex gap-6"
-        style={{ width: `${totalWidth * 2}px` }}
+        style={{ width: isInfinite ? `${totalWidth * 2}px` : `${totalWidth}px` }}
         animate={controls}
         drag="x"
         dragControls={dragControls}
@@ -118,7 +124,7 @@ const TestimonialsCarousel = ({ testimonials }: { testimonials: Testimonial[] })
         dragElastic={0.1}
         dragMomentum={false}
       >
-        {[...testimonials, ...testimonials].map((testimonial, index) => (
+        {(isInfinite ? [...testimonials, ...testimonials] : testimonials).map((testimonial, index) => (
           <div key={index} className="w-[300px] flex-shrink-0">
             <TestimonialCard testimonial={testimonial} />
           </div>
@@ -130,13 +136,17 @@ const TestimonialsCarousel = ({ testimonials }: { testimonials: Testimonial[] })
 
 export default function Testimonials() {
   return (
-    <section className="bg-blue-50 py-20 overflow-hidden">
+    <section className="bg-primary/5 py-20 overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-blue-500 text-center mb-4">Testimonials</h2>
+        <h2 className="text-4xl font-bold text-primary text-center mb-4">Testimonials</h2>
         <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
             What our customers have to say about us.
         </p>
-        <TestimonialsCarousel testimonials={testimonials} />
+        <TestimonialsCarousel 
+          testimonials={testimonials} 
+          speed={40} 
+          isInfinite={true} 
+        />
       </div>
     </section>
   )

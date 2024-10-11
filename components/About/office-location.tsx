@@ -33,7 +33,7 @@ export default function OfficeLocation() {
   };
 
   return (
-    <section ref={ref} className="bg-blue-500 text-white py-16">
+    <section ref={ref} className="bg-primary text-white py-16">
       <div className="container mx-auto px-4">
         <motion.div
           variants={containerVariants}

@@ -59,7 +59,7 @@ export default function JoinOurTeam() {
         <div className="relative">
           <motion.div
             variants={itemVariants}
-            className="absolute -top-12 -left-4 w-12 h-12 border-t-4 border-l-4 border-blue-500"
+            className="absolute -top-12 -left-4 w-12 h-12 border-t-4 border-l-4 border-primary"
           />
           <motion.h1
             variants={itemVariants}

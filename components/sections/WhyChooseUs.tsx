@@ -81,7 +81,7 @@ export default function WhyChooseUs() {
           </motion.h2>
           <motion.div
             variants={itemVariants}
-            className="w-24 h-1 bg-blue-500 mx-auto mb-8"
+            className="w-24 h-1 bg-primary mx-auto mb-8"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
@@ -107,7 +107,7 @@ export default function WhyChooseUs() {
             ))}
           </div>
           {/* <motion.div variants={itemVariants} className="text-center">
-            <button className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
+            <button className="bg-primary text-white px-6 py-2 rounded-md hover:bg-primary transition-colors">
               Read More
             </button>
           </motion.div> */}

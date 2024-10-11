@@ -85,6 +85,7 @@ const TermsAndConditions = () => {
       className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg"
     >
       <h1 className="text-3xl font-bold mb-4">Terms and Conditions</h1>
+      <p className="text-gray-600 mb-4">Last Updated: October 10, 2024</p>
       {termsContent.map((section, index) => (
         <motion.div
           key={index}
@@ -93,7 +94,7 @@ const TermsAndConditions = () => {
           transition={{ delay: 0.3 * (index + 1), duration: 0.5 }}
           className="mb-4"
         >
-          <h2 className={`text-lg md:text-2xl font-semibold mb-2 `}>
+          <h2 className={`text-lg md:text-2xl text-blue-500 font-semibold mb-2 `}>
             {section.title}
           </h2>
           {section.description && (

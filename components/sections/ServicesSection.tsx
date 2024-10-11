@@ -60,11 +60,11 @@ export default function OurServices() {
           animate={inView ? "visible" : "hidden"}
           className="relative"
         >
-          <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500" />
+          <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary" />
           <div className="pl-8">
             <motion.h2
               variants={itemVariants}
-              className="text-4xl font-bold text-blue-500 mb-6"
+              className="text-4xl font-bold text-primary mb-6"
             >
               Our Services
             </motion.h2>
@@ -98,7 +98,7 @@ export default function OurServices() {
             <motion.div variants={itemVariants} className="text-right">
               <button
                 onClick={() => router.push("/our-service")}
-                className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors"
+                className="bg-primary text-white px-6 py-2 rounded-md hover:bg-primary/20 transition-colors"
               >
                 Read More
               </button>

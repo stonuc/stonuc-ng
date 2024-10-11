@@ -206,7 +206,7 @@ export default function Component() {
               variants={itemVariants}
               type="submit"
               disabled={isPending}
-              className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors disabled:opacity-50"
+              className="w-full bg-primary text-white py-2 px-4 rounded hover:bg-primary/90 transition-colors disabled:opacity-50"
             >
               {isPending ? "Sending..." : "Send"}
             </motion.button>

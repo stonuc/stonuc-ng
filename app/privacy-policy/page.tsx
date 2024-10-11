@@ -5,7 +5,7 @@ import React from "react";
 const PrivacyPolicyPage = () => {
   return (
     <div className=" overflow-hidden">
-      <div className="bg-blue-500">
+      <div className="bg-primary">
         <Navbar />
       </div>
       <div className="overflow-hidden flex my-10 items-center justify-center">

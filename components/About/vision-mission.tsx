@@ -57,7 +57,7 @@ export default function VisionMissionSection() {
           <motion.div variants={itemVariants} className="relative">
             <motion.div
               variants={lineVariants}
-              className="absolute top-0 left-0 w-1/3 h-px bg-blue-500 origin-left"
+              className="absolute top-0 left-0 w-1/3 h-px bg-primary origin-left"
             />
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
               OUR VISION
@@ -79,7 +79,7 @@ export default function VisionMissionSection() {
             </p>
             <motion.div
               variants={lineVariants}
-              className="absolute bottom-0 right-0 w-1/3 h-px bg-blue-500 origin-right"
+              className="absolute bottom-0 right-0 w-1/3 h-px bg-primary origin-right"
             />
           </motion.div>
         </motion.div>

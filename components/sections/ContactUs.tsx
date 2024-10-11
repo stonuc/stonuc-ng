@@ -42,10 +42,10 @@ export default function ContactUs() {
         >
           <div className="md:w-1/2 mb-8 md:mb-0">
             <motion.div variants={itemVariants} className="relative pl-6">
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500" />
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary" />
               <motion.h2
                 variants={itemVariants}
-                className="text-4xl font-bold text-blue-500 mb-2"
+                className="text-4xl font-bold text-primary mb-2"
               >
                 Contact Us Today
               </motion.h2>
@@ -64,7 +64,7 @@ export default function ContactUs() {
               <motion.a
                 href="/contact"
                 variants={itemVariants}
-                className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors"
+                className="bg-primary text-white px-6 py-2 rounded-md hover:bg-primary transition-colors"
               >
                 Get in Touch
 
@@ -76,7 +76,7 @@ export default function ContactUs() {
             className="md:w-1/2 flex justify-center md:justify-end"
           >
             <div className="relative w-64 h-64">
-              <div className="absolute inset-0 bg-blue-100 rounded-full" />
+              <div className="absolute inset-0 bg-primary rounded-full" />
               <img
                 src="/av.png?height=256&width=256"
                 alt="Team member"

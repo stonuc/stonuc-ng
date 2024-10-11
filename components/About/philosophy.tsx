@@ -57,26 +57,26 @@ export default function PhilosophyOfOurName() {
         >
           <motion.div
             variants={lineVariants}
-            className="absolute left-0 top-0 bottom-0 w-px bg-blue-500 origin-top"
+            className="absolute left-0 top-0 bottom-0 w-px bg-primary origin-top"
           />
           <div className="pl-8 flex-1">
             <motion.h2 variants={itemVariants} className="text-4xl font-light text-gray-800 mb-4">
-              The Philosophy of <span className="text-blue-500 font-normal">Our Name</span>
+              The Philosophy of <span className="text-primary font-normal">Our Name</span>
             </motion.h2>
             <motion.p variants={itemVariants} className="text-gray-600 mb-4">
               Our name Stonuc describes our core values. Our name comes from the English word Reactive which is linked
               to the concept of Reactive Systems in software engineering. A Reactive system is a system that is
               Responsive in a timely manner if at all possible, Resilient which means staying responsive in the face of
               failure, and Elastic System that stays responsive under varying workload. Check the{" "}
-              <Link href="#" className="text-blue-500 hover:underline">
+              <Link href="#" className="text-primary hover:underline">
                 link
               </Link>{" "}
               for more information on reactive concept.
             </motion.p>
             <motion.div variants={itemVariants} className="flex items-center justify-center my-8">
-              <span className="text-blue-500 text-6xl">[</span>
+              <span className="text-primary text-6xl">[</span>
               <span className="text-black text-8xl font-bold">S</span>
-              <span className="text-blue-500 text-6xl">]</span>
+              <span className="text-primary text-6xl">]</span>
             </motion.div>
             <motion.p variants={itemVariants} className="text-gray-600 mb-4">
               In Stonuc, the letter <span className="font-bold">e</span> became{" "}
@@ -85,7 +85,7 @@ export default function PhilosophyOfOurName() {
               <span className="font-bold">k</span> in Stonuc which is how the c is pronounced /k/ in the word
               Reactive, and this reflects our transparency nature, we show the reality to our clients whatever it is,
               which is the foundation of the trust in our business relationship; so here is{" "}
-              <span className="text-blue-500">[Stonuc]</span>
+              <span className="text-primary">[Stonuc]</span>
             </motion.p>
           </div>
         </motion.div>

@@ -60,7 +60,7 @@ const ContactFormPgae = () => {
           className="space-y-4 px-2"
         >
           <div className="">
-            <h2 className="text-xl md:text-3xl font-bold text-blue-500">
+            <h2 className="text-xl md:text-3xl font-bold text-primary">
               Share a brief description of your needs, and our team will tailor
               the right solution for you.
             </h2>
@@ -127,7 +127,7 @@ const ContactFormPgae = () => {
             variants={itemVariants}
             type="submit"
             disabled={isPending}
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors disabled:opacity-50"
+            className="w-full bg-primary text-white py-2 px-4 rounded hover:bg-primary/90 transition-colors disabled:opacity-50"
           >
             {isPending ? "Sending..." : "Send"}
           </motion.button>

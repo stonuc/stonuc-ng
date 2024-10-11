@@ -43,12 +43,12 @@ const ServicesSection = () => {
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         variants={lineVariants}
-        className="absolute left-[15%] transform -translate-x-1/2 w-[7px] bg-blue-500"
+        className="absolute left-[15%] transform -translate-x-1/2 w-[7px] bg-primary"
       />
 
       <div className="mb-12">
         <motion.h2
-          className="text-blue-500 text-3xl ml-10 pl-10 md:pl-0 md:ml-0 text-left font-bold mb-8"
+          className="text-primary text-3xl ml-10 pl-10 md:pl-0 md:ml-0 text-left font-bold mb-8"
           initial="hidden"
           animate="visible"
           variants={textVariants}
@@ -78,17 +78,17 @@ const ServicesSection = () => {
             variants={cardVariants}
             className="flex items-center flex-col md:flex-row gap-4 justify-between w-full max-w-4xl p-6 bg-gray-100 shadow-lg rounded-md relative"
           >
-            <div className="absolute left-[15%] md:-left-6 -top-5 transform -translate-x-1/2 flex items-center justify-center w-8 h-8 bg-blue-500 text-white rounded-full">
+            <div className="absolute left-[15%] md:-left-6 -top-5 transform -translate-x-1/2 flex items-center justify-center w-8 h-8 bg-primary text-white rounded-full">
               {service.id}
             </div>
 
-            <div className="w-full md:w-1/3 relative flex items-center justify-center bg-blue-500 rounded-md  h-40">
+            <div className="w-full md:w-1/3 relative flex items-center justify-center bg-primary rounded-md  h-40">
               <img
                 src={service.image}
                 alt={service.title}
                 className="object-cover h-full w-full opacity-70"
               />
-              <div className="absolute inset-2 -bottom-2 -right-2 flex  p-3 bg-blue-500/30">
+              <div className="absolute inset-2 -bottom-2 -right-2 flex  p-3 bg-primary/30">
                 <p className="font-bold text-white mt-auto">{service.title}</p>
               </div>
             </div>
@@ -99,11 +99,11 @@ const ServicesSection = () => {
                 {
                   service.subitem.map((sub, i) =>  (
                     <div className="ml-4 mt-2">
-                      <h4 className="text-md inline-flex text-blue-500 font-semibold">
+                      <h4 className="text-md inline-flex text-primary font-semibold">
                         <Dot/>
                         {sub.title}
                       </h4>
-                      <p className="text-primary ml-7">{sub.describtion}</p>
+                      <p className="text-black ml-7">{sub.describtion}</p>
                     </div>
                   ))
                 }
