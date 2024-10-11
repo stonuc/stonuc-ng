@@ -91,6 +91,7 @@ export default function Footer() {
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       className="bg-gray-900 text-white py-12"
+      id="footer"
     >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -104,7 +105,7 @@ export default function Footer() {
                     {item.subitems?.map((subitem, subIndex) => (
                       <li key={subIndex}>
                         <Link
-                          href={column.link || "#"}
+                          href={column.link || "#footer"}
                           className="text-gray-400 hover:text-white text-sm"
                         >
                           {subitem}

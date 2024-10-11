@@ -81,12 +81,12 @@ const Navbar = () => {
             >
               <Mail />
             </a>
-            <a
+            {/* <a
               href="tel:+2348104092397"
               className="flex items-start w-full  gap-3"
             >
               <Phone />
-            </a>
+            </a> */}
           </div>
           <button
             className="md:hidden p-2"
