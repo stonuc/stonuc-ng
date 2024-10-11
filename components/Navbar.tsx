@@ -3,7 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { Mail, Phone } from "lucide-react";
+import { Facebook, Mail } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { usePathname, useRouter } from "next/navigation";
 import { navbarLinks } from "@/lib/data";
 
@@ -81,12 +82,12 @@ const Navbar = () => {
             >
               <Mail />
             </a>
-            {/* <a
-              href="tel:+2348104092397"
+            <a
+              href="https://wa.me/qr/GHFHB4F22BMTK1"
               className="flex items-start w-full  gap-3"
             >
-              <Phone />
-            </a> */}
+              <FaWhatsapp />
+            </a>
           </div>
           <button
             className="md:hidden p-2"
@@ -176,13 +177,13 @@ const Navbar = () => {
               <Mail size={20} />
               contact@stonuc.atoovis.com
             </a>
-            {/* <a
-              href="tel:+2348104092397"
+            <a
+              href="https://wa.me/qr/GHFHB4F22BMTK1"
               className="flex items-start w-full text-primary gap-3"
             >
-              <Phone size={20} />
-              (+234) 810 409 2397
-            </a> */}
+              <FaWhatsapp size={20} />
+              WhatsApp
+            </a>
             <button
               onClick={() => router.push("/contact")}
               className=" contact-btn px-4 py-2 bg-primary text-white rounded"
@@ -202,15 +203,15 @@ const Navbar = () => {
           <Mail />
           contact@stonuc.atoovis.com
         </a>
-        {/* <a
-          href="tel:+2348104092397"
+        <a
+          href="https://wa.me/qr/GHFHB4F22BMTK1"
           className={`flex items-start  w-full gap-3 ${
             isActive ? "text-black" : "text-white"
           } `}
         >
-          <Phone />
-          (+234) 810 409 2397
-        </a> */}
+          <FaWhatsapp size={22} />
+          WhatsApp
+        </a>
         <button
           onClick={() => router.push("/contact")}
           className={`w-fit text-nowrap ${isActive ? "contact-btn" : "contact-btn-v2"}  px-4 py-2 rounded ${isActive ? "bg-primary text-white" : "bg-white text-primary"}`}
