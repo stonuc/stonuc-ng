@@ -54,7 +54,6 @@ const TestimonialsCarousel = ({ testimonials }: { testimonials: Testimonial[] })
   const controls = useAnimationControls()
   const dragControls = useDragControls()
   const [isPaused, setIsPaused] = useState(false)
-  const [currentIndex, setCurrentIndex] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
 
   const cardWidth = 300
@@ -64,10 +63,8 @@ const TestimonialsCarousel = ({ testimonials }: { testimonials: Testimonial[] })
   const animate = async () => {
     await controls.start({
       x: -totalWidth,
-      transition: { duration: 30, ease: "linear" }
+      transition: { duration: 30, ease: "linear", repeat: Infinity }
     })
-    controls.set({ x: 0 })
-    animate()
   }
 
   useEffect(() => {
@@ -79,25 +76,36 @@ const TestimonialsCarousel = ({ testimonials }: { testimonials: Testimonial[] })
   }, [isPaused])
 
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    const change = info.offset.x
-    const velocity = info.velocity.x
-    
-    if (Math.abs(change) > cardWidth / 4 || Math.abs(velocity) > 200) {
-      const direction = change < 0 ? 1 : -1
-      const newIndex = (currentIndex + direction + testimonials.length) % testimonials.length
-      setCurrentIndex(newIndex)
-      controls.start({ x: -newIndex * (cardWidth + cardGap) })
-    } else {
-      controls.start({ x: -currentIndex * (cardWidth + cardGap) })
-    }
+    if (!containerRef.current) return
+
+    const containerWidth = containerRef.current.offsetWidth
+    const draggedDistance = info.offset.x
+    const currentPosition = info.point.x
+
+    let newX = (currentPosition % totalWidth) - draggedDistance
+    if (newX > 0) newX -= totalWidth
+    if (newX < -totalWidth) newX += totalWidth
+
+    controls.start({ x: newX, transition: { duration: 0.5 } })
+  }
+
+  const handlePointerDown = () => {
+    setIsPaused(true)
+  }
+
+  const handlePointerUp = () => {
+    setIsPaused(false)
   }
 
   return (
     <div 
       ref={containerRef}
-      className="overflow-hidden"
+      className="overflow-hidden cursor-grab active:cursor-grabbing"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+      onPointerLeave={handlePointerUp}
     >
       <motion.div
         className="flex gap-6"
@@ -107,6 +115,8 @@ const TestimonialsCarousel = ({ testimonials }: { testimonials: Testimonial[] })
         dragControls={dragControls}
         dragConstraints={containerRef}
         onDragEnd={handleDragEnd}
+        dragElastic={0.1}
+        dragMomentum={false}
       >
         {[...testimonials, ...testimonials].map((testimonial, index) => (
           <div key={index} className="w-[300px] flex-shrink-0">
