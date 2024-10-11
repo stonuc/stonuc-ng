@@ -58,7 +58,7 @@ const CookieConsentBanner = () => {
             </div>
             <button
               onClick={handleDecline}
-              className="absolute top-2 right-2 text-primary hover:text-white transition-colors"
+              className="absolute top-2 right-2 text-white  transition-colors"
               aria-label="Close"
             >
               <X size={20} />
