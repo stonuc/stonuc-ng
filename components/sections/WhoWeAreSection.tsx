@@ -59,15 +59,15 @@ export default function WhoWeAre() {
         >
           <motion.div
             variants={circleVariants}
-            className="relative overflow-hidden w-64 h-64 md:w-96 md:h-96 mb-8 md:mb-0"
+            className="relative  w-64 h-64 md:w-96 md:h-96 mb-8 md:mb-0"
           >
-            <div className="absolute inset-0 border-4 border-blue-500 rounded-full" />
+            <div className="absolute overflow-hidden inset-0 border-4 border-blue-500 rounded-full" />
             <Image
-              src="/who.png?height=384&width=384"
+              src="/main-team.png?height=384&width=384"
               alt="Team working together"
               width={384}
               height={384}
-              className="rounded-full object-cover "
+              className=" h-full w-full object-cover rounded-full"
             />
           </motion.div>
           <div className="md:ml-12 md:w-1/2">

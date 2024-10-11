@@ -19,9 +19,9 @@ const Page = () => {
         <IdeaSection/>
         <VisionMissionSection/>
         <CoreValues/>
-        <OfficeLocation/>
+        {/* <OfficeLocation/> */}
         <WhyChooseUs/>
-        <OurTeam/>
+        {/* <OurTeam/> */}
         <ContactSection/>
     </div>
   )

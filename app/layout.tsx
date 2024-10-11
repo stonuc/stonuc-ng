@@ -20,7 +20,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Stonuc Technologies",
-  description: "Software Consulting and Development",
+  description: "Stonuc is a business and software consultation firm offering a wide range of software development and UI/UX services.",
 
   applicationName:  "Stonuc Technologies",
 
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     site: "@stonuctechnologies",
     title: "Stonuc Technologies",
     creator:  "@roxxoncodes",
-    description: "Software Consulting and Development",
+    description: "Stonuc is a business and software consultation firm offering a wide range of software development and UI/UX services.",
     images: [
       {
         url: "/og1.png",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     url: "/",
     type: "website",
     title: "Stonuc Technologies",
-    description: "Software Consulting and Development",
+    description: "Stonuc is a business and software consultation firm offering a wide range of software development and UI/UX services.",
     images: [
       {
         url: "/og1.png",

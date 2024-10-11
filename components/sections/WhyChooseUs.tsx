@@ -32,7 +32,7 @@ const features = [
     title: "Seamless Communication",
     description:
       "We assign a dedicated project manager to every client to ensure clear and consistent communication throughout your project. You’ll always know your project's progress and can easily contact our team for updates.",
-    icon: "/w3.png?height=80&width=80",
+    icon: "/seamless.webp?height=80&width=80",
   },
 ];
 
