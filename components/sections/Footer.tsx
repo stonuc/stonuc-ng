@@ -124,7 +124,7 @@ export default function Footer() {
           >
             Privacy Policy
           </Link>
-          <span className="">|</span>
+          <span className="mt-3 md:mt-0">|</span>
           <Link
             href="/terms"
             className="hover:text-white mt-4 md:mt-0"

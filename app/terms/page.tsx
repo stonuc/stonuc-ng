@@ -4,11 +4,11 @@ import TermsAndConditions from "@/components/TermsAndConditions";
 
 const TermsAndConditionsPage = () => {
   return (
-    <div className="">
+    <div className="overflow-hidden">
       <div className="bg-blue-500">
         <Navbar />
       </div>
-      <div className=" flex my-10 items-center justify-center">
+      <div className=" flex my-10 overflow-hidden items-center justify-center">
         <TermsAndConditions />
       </div>
     </div>
