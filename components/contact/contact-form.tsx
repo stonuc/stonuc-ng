@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { Facebook, InstagramIcon, Linkedin, Twitter } from "lucide-react";
 import { useRef, useState, useTransition } from "react";
 import { submitContactForm } from "@/actions/submitForm";
+import { FaWhatsapp } from "react-icons/fa";
 
 type FormErrors = {
   [key: string]: string[];
@@ -168,7 +169,6 @@ const ContactFormPgae = () => {
               <br />
               Ikeja, Lagos, Quarter 12.
             </p>
-            
           </motion.div>
           <motion.div variants={itemVariants} className="mb-8">
             <h3 className="text-xl font-semibold mb-2">Follow Us</h3>
@@ -192,7 +192,20 @@ const ContactFormPgae = () => {
           </motion.div>
           <motion.div variants={itemVariants}>
             <h3 className="text-xl font-semibold mb-2">Let&apos;s Talk!</h3>
-            <p className="mb-2">contact@stonuc.atoovis.com</p>
+            <p className="mb-2">
+              <a href="mailto:contact@stonuc.atoovis.com">
+                contact@stonuc.atoovis.com
+              </a>
+            </p>
+            <p className="mb-2">
+              <a
+                href="https://wa.me/qr/GHFHB4F22BMTK1"
+                className={`flex items-start  w-full gap-3 text-white`}
+              >
+                <FaWhatsapp size={22} />
+                WhatsApp
+              </a>
+            </p>
           </motion.div>
         </div>
       </div>
