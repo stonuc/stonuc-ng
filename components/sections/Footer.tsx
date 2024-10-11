@@ -115,7 +115,7 @@ export default function Footer() {
           variants={itemVariants}
           className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400"
         >
-          <Link href={"/"} className="text-white font-bold text-xl">Stonuc</Link>
+          <Link href={"/"} className="text-white font-bold text-xl">Stonuc Technologies</Link>
           <p>&copy; {new Date().getFullYear()} Stonuc or its affiliate. All rights reserved.</p>
           <div className="gap-2 flex items-center">
           <Link
