@@ -74,7 +74,7 @@ const TypingText: React.FC<TypingTextProps> = ({
           key={displayedText} 
           initial={{ backgroundColor: '#60696a' }}
           animate={{
-            backgroundColor: isHighlighted ? '#007bff' : '#60696a', 
+            backgroundColor: isHighlighted ? '#41afd4' : '#60696a', 
             color: isHighlighted ? '#fff' : '#fff', 
           }}
           transition={{ duration: 0.5, ease: 'easeInOut' }}
