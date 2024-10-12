@@ -182,7 +182,7 @@ export default function Component() {
                 type="email"
                 name="email"
                 placeholder="Your Email"
-                className="w-full p-2 bg-gray-800 rounded focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full p-2 bg-gray-800 rounded  focus:outline-none focus:ring-2 focus:ring-primary"
                 required
               />
               {formErrors?.email && (
@@ -196,7 +196,7 @@ export default function Component() {
                 country={"us"}
                 value={phone}
                 onChange={setPhone}
-                inputClass="!w-full !h-full !bg-gray-800 !border !rounded-md !p-2 !pl-11  focus:outline-none focus:ring-2 focus:ring-primary"
+                inputClass="!w-full !h-full !bg-gray-800 !border-none !rounded-md !p-2 !pl-11  focus:outline-none focus:ring-2 focus:ring-primary"
                 containerClass="w-full "
                 buttonClass="!bg-gray-800"
                 dropdownClass="!bg-gray-800 !hover:bg-gray-700"
