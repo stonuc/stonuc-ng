@@ -18,18 +18,14 @@ const formApp = z.object({
 type Attachment = {
   filename: string;
   content: string;
-}[];
+};
 
-export async function submitApplicationForm(
-  formData: FormData,
-  phoneForm: string,
-  attachment: Attachment
-) {
+export async function submitApplicationForm(formData: FormData) {
   const validatedFields = formApp.safeParse({
     name: formData.get("name"),
     surname: formData.get("surname"),
     email: formData.get("email"),
-    phone: phoneForm,
+    phone: formData.get("phone"),
   });
 
   if (!validatedFields.success) {
@@ -38,6 +34,24 @@ export async function submitApplicationForm(
       errors: validatedFields.error.flatten().fieldErrors,
     };
   }
+
+  const attachments: Attachment[] = [];
+  const filePromises: any[] = [];
+
+  formData.forEach((value, key) => {
+    if (key === "files" && value instanceof File) {
+      filePromises.push(
+        value.arrayBuffer().then((buffer) => {
+          attachments.push({
+            filename: value.name,
+            content: Buffer.from(buffer).toString("base64"),
+          });
+        })
+      );
+    }
+  });
+
+  await Promise.all(filePromises);
 
   const { name, email, phone, surname } = validatedFields.data;
 
@@ -49,43 +63,18 @@ export async function submitApplicationForm(
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>New Contact Form Submission</title>
         <style>
-          body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-          }
-          .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-          }
-          h1 {
-            color: #444;
-            font-size: 24px;
-          }
-          .section {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-          }
-          .section h2 {
-            margin-top: 0;
-            font-size: 18px;
-            color: #555;
-          }
-          .footer {
-            margin-top: 30px;
-            font-size: 12px;
-            color: #888;
-          }
+          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+          h1 { color: #444; font-size: 24px; }
+          .section { margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 4px; }
+          .section h2 { margin-top: 0; font-size: 18px; color: #555; }
+          .footer { margin-top: 30px; font-size: 12px; color: #888; }
         </style>
       </head>
       <body>
         <div class="container">
           <h1>New Application Form Submission</h1>
           <p>You have received a new application from the contact form on your website.</p>
-          
           <div class="section">
             <h2>Contact Details:</h2>
             <p><strong>Name:</strong> ${name}</p>
@@ -93,8 +82,6 @@ export async function submitApplicationForm(
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Phone:</strong> ${phone}</p>
           </div>
-          
-          
           <div class="footer">
             <p>This email was sent from the contact form on your website.</p>
           </div>
@@ -107,10 +94,10 @@ export async function submitApplicationForm(
     const res = await sendMail({
       subject: `New Application form submission from ${name}`,
       html: emailHtml,
-      file: attachment,
+      file: attachments,
     });
     return {
-      success: res,
+      success: !!res,
       message: "Your message has been sent successfully!",
     };
   } catch (error) {

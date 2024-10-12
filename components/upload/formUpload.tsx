@@ -12,6 +12,11 @@ type FormErrors = {
   [key: string]: string[];
 };
 
+type Attachment = {
+  filename: string;
+  content: string;
+}[];
+
 const FileUploadForm = () => {
   const [files, setFiles] = useState<File[]>([]);
   const [phone, setPhone] = useState<string>("");
@@ -35,13 +40,11 @@ const FileUploadForm = () => {
 
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
-      // Check total file size before adding the new files
       const totalSize = acceptedFiles.reduce((sum, file) => sum + file.size, 0);
       const currentSize = files.reduce((sum, file) => sum + file.size, 0);
 
       if (totalSize + currentSize > maxFileSize) {
         setUploadMessage("You can only upload a maximum of 20MB.");
-
         return;
       }
 
@@ -62,8 +65,44 @@ const FileUploadForm = () => {
     accept: {
       "image/*": [".png", ".jpg", ".jpeg", ".gif"],
       "application/pdf": [".pdf"],
+      "application/msword": [".doc"], // Microsoft Word
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document": [".docx"], // Microsoft Word (OpenXML)
+      "application/vnd.ms-excel": [".xls"], // Microsoft Excel
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [".xlsx"], // Microsoft Excel (OpenXML)
+      "application/vnd.ms-powerpoint": [".ppt"], // Microsoft PowerPoint
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation": [".pptx"], // Microsoft PowerPoint (OpenXML)
+      "text/plain": [".txt"], // Plain text
+      "application/rtf": [".rtf"], // Rich Text Format
+      "application/vnd.oasis.opendocument.text": [".odt"], // OpenDocument Text
+      "application/vnd.oasis.opendocument.spreadsheet": [".ods"], // OpenDocument Spreadsheet
+      "application/vnd.oasis.opendocument.presentation": [".odp"], // OpenDocument Presentation
     },
   });
+  
+
+  const handleSubmit = async (e: FormData) => {
+    setFormErrors(null);
+    setFormStatus(null);
+
+    const formData = e;
+    formData.append("phone", phone);
+
+    files.forEach((file) => {
+      formData.append("files", file);
+    });
+
+    startTransition(async () => {
+      const result = await submitApplicationForm(formData);
+      if ("errors" in result) {
+        setFormErrors(result.errors as FormErrors);
+      } else {
+        setFormStatus(result);
+        formRef.current?.reset();
+        setPhone("");
+        setFiles([]); 
+      }
+    });
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -76,52 +115,7 @@ const FileUploadForm = () => {
       },
     },
   };
-  type Attachment = {
-    filename: string;
-    content: string;
-  }[];
-  const handleSubmit = async (formData: FormData) => {
-    setFormErrors(null);
-    setFormStatus(null);
-    startTransition(async () => {
-      let attachment: Attachment | null = null;
 
-      if (files.length > 0) {
-        attachment = await Promise.all(
-          files.map(async (file) => {
-            const fileContent = await file.arrayBuffer();
-            const base64Content = Buffer.from(fileContent).toString("base64");
-
-            return {
-              filename: file.name,
-              content: base64Content,
-            };
-          })
-        );
-      }
-
-      const parsedAttachment = attachment as Attachment;
-      console.log({
-        phone,
-        files: files.map((file) => file.name),
-        attachment: attachment?.map((attachment) => ({
-          filename: attachment.filename,
-          content: attachment.content,
-        })),
-      })
-      const result = await submitApplicationForm(
-        formData,
-        phone,
-        parsedAttachment
-      );
-      if ("errors" in result) {
-        setFormErrors(result.errors as FormErrors);
-      } else {
-        setFormStatus(result);
-        formRef.current?.reset();
-      }
-    });
-  };
   return (
     <motion.section ref={ref} className="">
       <motion.form
