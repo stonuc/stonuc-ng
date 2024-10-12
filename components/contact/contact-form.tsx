@@ -200,7 +200,7 @@ const ContactFormPgae = () => {
             <p className="mb-2">
               <a
                 href="https://wa.me/qr/GHFHB4F22BMTK1"
-                className={`flex items-start  w-full gap-3 text-white`}
+                className={`flex items-start  w-full gap-3 text-black`}
               >
                 <FaWhatsapp size={22} />
                 WhatsApp

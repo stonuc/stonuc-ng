@@ -7,19 +7,19 @@ import { useEffect, useRef, useState } from "react"
 
 const testimonials = [
   {
-    name: "Michael A.",
-    role: "CEO of FinTech Innovators",
+    name: "Michael Andrew.",
+    role: "CEO of Angi Tech",
     image: "/user.png?height=100&width=100",
     text: "Working with Stonuc was a game-changer for our startup. They not only understood our vision but also helped us refine it into a scalable product. Their agile approach allowed us to launch our MVP in record time, and their continuous support has been invaluable as we grow. I can't recommend them highly enough!"
   },
   {
-    name: "Gift Lewis.",
-    role: "Founder of EnoShop",
+    name: "Gift Uche.",
+    role: "Founder of Atop Shop",
     image: "/user.png?height=100&width=100",
     text: "Stonuc exceeded our expectations at every stage of the project. Their focus on user experience transformed our online platform into a seamless shopping experience for our customers. The team was communicative and proactive, making the entire development process enjoyable and efficient. We're thrilled with the results!",
   },
   {
-    name: "David T.",
+    name: "David Adeyemi.",
     role: "CTO of HealthTech Solutions",
     image: "/user.png?height=100&width=100",
     text: "The collaboration with Stonuc was exceptional. They brought a wealth of expertise in software development and UI/UX design, helping us create a health management app that users love. Their attention to detail and commitment to quality are unmatched. We look forward to continuing our partnership!",

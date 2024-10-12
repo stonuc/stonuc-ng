@@ -80,13 +80,13 @@ const Navbar = () => {
               href="mailto:contact@stonuc.atoovis.com"
               className="flex items-center  w-full gap-3"
             >
-              <Mail />
+              <Mail size={20} />
             </a>
             <a
               href="https://wa.me/qr/GHFHB4F22BMTK1"
               className="flex items-start w-full  gap-3"
             >
-              <FaWhatsapp />
+              <FaWhatsapp size={20} />
             </a>
           </div>
           <button
@@ -200,7 +200,7 @@ const Navbar = () => {
             isActive ? "text-black" : "text-white"
           } `}
         >
-          <Mail />
+          <Mail size={20} />
           contact@stonuc.atoovis.com
         </a>
         <a
@@ -209,7 +209,7 @@ const Navbar = () => {
             isActive ? "text-black" : "text-white"
           } `}
         >
-          <FaWhatsapp size={22} />
+          <FaWhatsapp size={20} />
           WhatsApp
         </a>
         <button
