@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { Facebook, Mail } from "lucide-react";
+import { Facebook, Mail, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { usePathname, useRouter } from "next/navigation";
 import { navbarLinks } from "@/lib/data";
@@ -87,6 +87,12 @@ const Navbar = () => {
               className="flex items-start w-full  gap-3"
             >
               <FaWhatsapp size={20} />
+            </a>
+            <a
+              href="+2349012588937"
+              className="flex items-start w-full  gap-3"
+            >
+              <Phone size={20} />
             </a>
           </div>
           <button
