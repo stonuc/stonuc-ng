@@ -109,7 +109,6 @@ const FileUploadForm = () => {
           content: attachment.content,
         })),
       })
-      return
       const result = await submitApplicationForm(
         formData,
         phone,

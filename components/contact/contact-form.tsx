@@ -6,6 +6,9 @@ import { Facebook, InstagramIcon, Linkedin, Twitter } from "lucide-react";
 import { useRef, useState, useTransition } from "react";
 import { submitContactForm } from "@/actions/submitForm";
 import { FaWhatsapp } from "react-icons/fa";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+
 
 type FormErrors = {
   [key: string]: string[];
@@ -16,6 +19,7 @@ const ContactFormPgae = () => {
     threshold: 0.2,
   });
 
+  const [phone, setPhone] = useState<string>("");
   const [isPending, startTransition] = useTransition();
   const [formStatus, setFormStatus] = useState<{
     success?: boolean;
@@ -27,12 +31,14 @@ const ContactFormPgae = () => {
     setFormErrors(null);
     setFormStatus(null);
     startTransition(async () => {
+      formData.append("phoneParsed", phone)
       const result = await submitContactForm(formData);
       if ("errors" in result) {
         setFormErrors(result.errors as FormErrors);
       } else {
         setFormStatus(result);
         formRef.current?.reset();
+        setPhone("")
       }
     });
   };
@@ -97,14 +103,15 @@ const ContactFormPgae = () => {
             )}
           </div>
           <div>
-            <motion.input
-              variants={itemVariants}
-              type="tel"
-              name="phone"
-              placeholder="Your Phone Number (e.g., +1 000 000 0000)"
-              className="w-full p-2 border rounded"
-              required
-            />
+          <PhoneInput
+            country={"us"}
+            value={phone}
+            onChange={setPhone}
+            inputClass="!w-full !h-full !border !rounded-md !p-2 !pl-11  focus:outline-none focus:ring-2 focus:ring-primary"
+            containerClass="w-full"
+            autoFormat
+            enableSearch
+          />
             {formErrors?.phone && (
               <p className="text-red-500 text-sm mt-1">{formErrors.phone[0]}</p>
             )}
@@ -160,12 +167,12 @@ const ContactFormPgae = () => {
           <motion.div variants={itemVariants} className="mb-8">
             <h3 className="text-xl font-semibold mb-2">Contact Information</h3>
             <p className="mt-4">
-              US Office
+              US
               <br />
               701 Tillery Street, Austin, Texas
             </p>
-            <p>
-              Nigeria Office
+            <p className="mt-4">
+              Nigeria
               <br />
               Ikeja, Lagos, Quarter 12.
             </p>

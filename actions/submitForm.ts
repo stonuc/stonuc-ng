@@ -137,7 +137,7 @@ export async function submitContactForm(formData: FormData) {
   const validatedFields = formSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
-    phone: formData.get("phone"),
+    phone: formData.get("phoneParsed"),
     message: formData.get("message"),
   });
 

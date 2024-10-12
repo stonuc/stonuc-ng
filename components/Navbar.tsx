@@ -89,7 +89,7 @@ const Navbar = () => {
               <FaWhatsapp size={20} />
             </a>
             <a
-              href="+2349012588937"
+              href="tel:+2349012588937"
               className="flex items-start w-full  gap-3"
             >
               <Phone size={20} />
