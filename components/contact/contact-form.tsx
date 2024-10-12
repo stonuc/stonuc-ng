@@ -172,7 +172,7 @@ const ContactFormPgae = () => {
               701 Tillery Street, Austin, Texas
             </p>
             <p className="mt-4">
-              Nigeria
+              NG
               <br />
               Ikeja, Lagos, Quarter 12.
             </p>
