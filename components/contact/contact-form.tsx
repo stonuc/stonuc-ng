@@ -81,7 +81,7 @@ const ContactFormPgae = () => {
               type="text"
               name="name"
               placeholder="Your Name"
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-primary"
               required
               minLength={2}
             />
@@ -95,7 +95,7 @@ const ContactFormPgae = () => {
               type="email"
               name="email"
               placeholder="Your Email"
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-primary"
               required
             />
             {formErrors?.email && (
@@ -122,7 +122,7 @@ const ContactFormPgae = () => {
               name="message"
               placeholder="Tell us what are you looking for ..."
               rows={4}
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-primary"
               required
             />
             {formErrors?.message && (

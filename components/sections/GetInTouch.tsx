@@ -166,7 +166,7 @@ export default function Component() {
                 type="text"
                 name="name"
                 placeholder="Your Name"
-                className="w-full p-2 bg-gray-800 rounded"
+                className="w-full p-2 bg-gray-800 rounded focus:outline-none focus:ring-2 focus:ring-primary"
                 required
                 minLength={2}
               />
@@ -182,7 +182,7 @@ export default function Component() {
                 type="email"
                 name="email"
                 placeholder="Your Email"
-                className="w-full p-2 bg-gray-800 rounded"
+                className="w-full p-2 bg-gray-800 rounded focus:outline-none focus:ring-2 focus:ring-primary"
                 required
               />
               {formErrors?.email && (
@@ -216,7 +216,7 @@ export default function Component() {
                 name="message"
                 placeholder="Tell us what you're looking for..."
                 rows={4}
-                className="w-full p-2 bg-gray-800 rounded"
+                className="w-full p-2 bg-gray-800 rounded focus:outline-none focus:ring-2 focus:ring-primary"
                 required
               />
               {formErrors?.message && (
