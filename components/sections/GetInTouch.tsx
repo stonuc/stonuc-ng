@@ -197,7 +197,10 @@ export default function Component() {
                 value={phone}
                 onChange={setPhone}
                 inputClass="!w-full !h-full !bg-gray-800 !border !rounded-md !p-2 !pl-11  focus:outline-none focus:ring-2 focus:ring-primary"
-                containerClass="w-full"
+                containerClass="w-full "
+                buttonClass="!bg-gray-800"
+                dropdownClass="!bg-gray-800 !hover:bg-gray-700"
+                searchClass="!bg-gray-800 !text-white"
                 autoFormat
                 enableSearch
               />
