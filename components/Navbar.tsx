@@ -78,7 +78,7 @@ const Navbar = () => {
           <div className="flex md:hidden items-center gap-3">
             <a
               href="mailto:contact@stonuc.atoovis.com"
-              className="flex items-center  w-full gap-3"
+              className="flex items-center  w-full gap-5"
             >
               <Mail size={20} />
             </a>
